@@ -1,8 +1,4 @@
-print('hello world')
-
-print('hi this is main and ABC')
-print('hi this is main and PQR')
-
-print('hi this is main second')
-
-print('hi this is main third')
+num1 = 10
+num2 = 20
+result = num1 + num2
+print('Addition is ', result)
