@@ -16,4 +16,14 @@ def str_funs():
     print('is alphabate : ', os.isalpha())
 
 
-str_funs()
+# ip = abc
+# n = 1
+# op = aBc
+def caps_nth(n, st_dt):
+    print('[:n]', st_dt[:n].lower())
+    print('[n:]', st_dt[n:].capitalize())
+
+    return st_dt[:n].lower() + st_dt[n:].capitalize()
+
+
+print(caps_nth(2, 'abc'))
