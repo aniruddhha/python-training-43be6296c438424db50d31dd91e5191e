@@ -14,4 +14,17 @@ def arithmatic():
     print('Modulas : ', num1 % 2)
 
 
-arithmatic()
+def assignment():
+    ver = 10
+    print('Version : ', ver)
+    a, b = 10, 20
+    a, b = 50, ver
+    a += 10
+    a -= b
+    a *= 20
+    a = a - b
+    a = a * 20
+    print('a, b', a, b)
+
+
+assignment()
