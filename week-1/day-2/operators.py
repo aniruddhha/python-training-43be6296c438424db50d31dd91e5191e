@@ -27,4 +27,16 @@ def assignment():
     print('a, b', a, b)
 
 
-assignment()
+def bitwise():
+    a = 10
+    b = 20
+    print('And : ', a & b)
+    print('Or : ', a | b)
+    print('Xor : ', a ^ b)
+    print('Not : ', ~a)
+
+    a &= b
+    print('And = :', a)
+
+
+bitwise()
