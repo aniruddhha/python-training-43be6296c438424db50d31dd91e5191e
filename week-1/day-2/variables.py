@@ -1,6 +1,10 @@
 ''' Variables and Its types '''
 
+# i am a comment
+
 age = 10
+age = 'hello'
+
 name = 'android'
 price = 45.56
 isStock = True
