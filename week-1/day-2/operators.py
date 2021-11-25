@@ -47,4 +47,10 @@ def comparision():
     print(' Not Equals', num1 != num2)
 
 
-comparision()
+def logical():
+    print('And : ', num1 > 10 and num2 < 50)
+    print('Or : ', num1 > 10 or num2 < 50)
+    print('Or : ', not (num1 > 10 or num2 < 50))
+
+
+logical()
