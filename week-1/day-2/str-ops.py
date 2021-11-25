@@ -22,4 +22,21 @@ def multi_line():
     print(dt)
 
 
-multi_line()
+def str_eqlt():
+    nm = 'android'
+    mm = 'androidmmm'
+
+    assert nm == mm
+    print('All Well')
+
+
+def str_len():
+    nm = 'android'
+    print(f'Length of string is {len(nm)}')
+
+
+def str_rep(n=5):
+    print('android\n'*n)
+
+
+str_rep(20)
