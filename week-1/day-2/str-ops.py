@@ -5,12 +5,12 @@ def basics():
 
 
 def multi_line():
-    ver = 10
+    v = 10
 
     dt = ''' 
         This is android with version {ver}
         with varibles will also work.
-     '''
+     '''.format(ver=v)
 
     print(dt)
 
