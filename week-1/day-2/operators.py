@@ -39,4 +39,12 @@ def bitwise():
     print('And = :', a)
 
 
-bitwise()
+def comparision():
+    print(' Equality ', num1 == num2)
+    print(' Greater Than ', num1 > num2)
+    print(' Less Than ', num1 < num2)
+    print(' Greater Equals', num1 >= num2)
+    print(' Not Equals', num1 != num2)
+
+
+comparision()
