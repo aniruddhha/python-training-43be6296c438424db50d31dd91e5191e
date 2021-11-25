@@ -14,5 +14,12 @@ def multi_line():
 
     print(dt)
 
+    dt = f''' 
+        This is android with version {v}
+        with varibles will also work.
+     '''
+
+    print(dt)
+
 
 multi_line()
