@@ -5,4 +5,9 @@ def list_elements() -> None:
     print(days[1:6:2])
 
 
-list_elements()
+def list_elements_index() -> None:
+    days = ['sun', 'mon', 'tue', 'wed']
+    print(f"Index of sun is {days.index('mon')}")
+
+
+list_elements_index()
