@@ -9,7 +9,7 @@ def info_details():
     print('here are machine details')
 
 
-def info_with_parameter(isSql, con):
+def info_with_parameter(isSql=True, con='default'):
     print('Is SQL Db : ', isSql)
     print('Connection : ', con)
 
@@ -19,9 +19,19 @@ def info_with_return():
     return 20
 
 
-info()
-info_details()
-info_with_parameter(False, "http://abc.com")
+# info()
+# info_details()
+info_with_parameter(
+    False,
+    'http://abc.com'
+)
 
-ret = info_with_return()
-print('Return Value is ', ret)
+info_with_parameter(
+    con='http://pqr.com',
+    isSql=True
+)
+
+info_with_parameter()
+
+# ret = info_with_return()
+# print('Return Value is ', ret)
