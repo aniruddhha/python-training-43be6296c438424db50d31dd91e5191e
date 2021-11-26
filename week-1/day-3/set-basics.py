@@ -1,3 +1,15 @@
+'''
+    Set Observations
+    1. unoredered and unindexed
+    2. non subscriptable
+    3. elemennts can be added 
+    4. sequences can be added
+    5. elemnets can be removed
+    6. set operations can performed
+    7. duplicates are not allowed
+'''
+
+
 def basics():
     lst = ['abc', 'pqr', 'lmn', 'abc']
 
@@ -6,6 +18,12 @@ def basics():
 
     names = set(lst)
     print(names)
+    names.add('bbb')
+    names.update(['kkk', 'vvv'])
+    names.remove('bbb')
+
+    print(names)
+
     # names[2] = 'nnn'
     # print(names)
 
