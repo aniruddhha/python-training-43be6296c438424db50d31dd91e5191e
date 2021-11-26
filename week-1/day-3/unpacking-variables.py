@@ -4,6 +4,10 @@ def sample_runner(start, stop, step):
         print(i)
 
 
+def sample_display(ver, os, is_stock):
+    print(f'Version : {ver}, OS : {os}, Stock : {is_stock}')
+
+
 def unpacking_sequence():
     names = ['abc', 'pqr', 'lmn']
     print(names)
@@ -26,7 +30,9 @@ def unpacking_sequence():
 
 
 def unpacking_dictionary():
-    pass
+    names = {'ver': 10, 'os': 'android', 'is_stock': True}
+    sample_display(names.get('ver'), names.get('os'), names.get('is_stock'))
+    sample_display(**names)
 
 
-unpacking_sequence()
+unpacking_dictionary()
