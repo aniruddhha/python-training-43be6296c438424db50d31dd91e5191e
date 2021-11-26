@@ -1,5 +1,5 @@
 
-data = []
+data = ['hi']
 
 
 def add(dt) -> None:
