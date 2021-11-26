@@ -9,3 +9,4 @@ print(gmf())
 print(ggg())
 
 print(f'what is my name ? {__name__}')
+print(f'what is my name ? {__name__}')
