@@ -33,4 +33,36 @@ def basics():
     print({*names.keys()})
 
 
-basics()
+def operations():
+    names = dict([
+        (1, 'abc'),
+        (2, 'pqr'),
+        (3, 'lmn'),
+        (4, 'lmn')
+    ])
+
+    names.update([
+        (6, 'gty'),
+        (7, 'opl')
+    ])
+
+    names.update({
+        9: 'nby',
+        10: 'vft'
+    })
+
+    print(names)
+
+    print(names.get(10))
+
+    print(names.pop(9))
+    print(names)
+
+    items_names = list(names.items())
+    print(items_names)
+
+    for itm in items_names:
+        print(itm)
+
+
+operations()
