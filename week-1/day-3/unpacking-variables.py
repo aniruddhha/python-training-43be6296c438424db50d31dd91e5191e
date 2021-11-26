@@ -2,7 +2,12 @@ def unpacking_sequence():
     names = ['abc', 'pqr', 'lmn']
     print(names)
     print(*names)
+
     names = ('abc', 'pqr', 'lmn')
+    print(names)
+    print(*names)
+
+    names = {'abc', 'pqr', 'lmn'}
     print(names)
     print(*names)
 
