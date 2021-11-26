@@ -11,3 +11,7 @@ def give_me_day() -> dict:
     }
 
     return days
+
+
+def give_me_holidays() -> set:
+    return {2, 6, 8}
