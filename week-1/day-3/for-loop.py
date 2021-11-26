@@ -1,7 +1,7 @@
 def basic_for():
     names = ['abc', 'pqr', 'lmn']
 
-    for n in range(5):
+    for n in range(3):
         print(n)
 
     for name in names:
@@ -26,8 +26,8 @@ def list_for_demo():
     names = ['abc', 'pqr', 'lmn']
     print(names)
 
-    names = [name.upper() for name in names]
+    names = [kddfhksghskjg.upper() for kddfhksghskjg in names]
     print(names)
 
 
-list_for_demo()
+basic_for()
