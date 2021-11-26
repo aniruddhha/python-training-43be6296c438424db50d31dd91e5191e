@@ -12,7 +12,7 @@ def sample_runner(start, stop, step):
     if stop > 50:
         raise Exception(f'Invalid Stop : {stop}')
     if step not in [1, 2]:
-        Exception(f'Invalid Step : {step}')
+        raise Exception(f'Invalid Step : {step}')
 
     for i in range(start, stop, step):
         pass

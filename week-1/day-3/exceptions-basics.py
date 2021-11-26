@@ -17,7 +17,7 @@ def calculate_with_n(num1, num2, n):
     names = [10, 20, 30]
 
     try:
-        res = num1/num2 + names[n]
+        res = num1/num2 + names[n]  # python adds raise statement
 
     except (ZeroDivisionError, IndexError):
         res = 0
