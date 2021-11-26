@@ -10,4 +10,21 @@ def basics():
     # print(names)
 
 
-basics()
+def operation():
+    st1 = {'a', 'b'}
+    st2 = {'b', 'd'}
+
+    print('--- Minus ---')
+    print(st1 - st2)
+
+    print('---Union---')
+    print(st1.union(st2))
+
+    print('---Intersection---')
+    print(st1.intersection(st2))
+
+    print('---Difference---')
+    print(st1.difference(st2))
+
+
+operation()
