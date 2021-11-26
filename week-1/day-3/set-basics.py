@@ -9,8 +9,10 @@ def basics():
     # names[2] = 'nnn'
     # print(names)
 
+    # print(names[1:3])
 
-def operation():
+
+def operations():
     st1 = {'a', 'b'}
     st2 = {'b', 'd'}
 
@@ -26,5 +28,8 @@ def operation():
     print('---Difference---')
     print(st1.difference(st2))
 
+    print('--- Are Disjoint ---')
+    print(st1.isdisjoint(st2))
 
-operation()
+
+basics()
