@@ -15,4 +15,19 @@ def nested_for():
             print(j, ' ')
 
 
-nested_for()
+'''
+A list comprehension consists of brackets containing an expression followed by a for clause,
+then zero or more for or if clauses. The result will be a new list resulting from evaluating
+the expression in the context of the for and if clauses which follow it.
+'''
+
+
+def list_for_demo():
+    names = ['abc', 'pqr', 'lmn']
+    print(names)
+
+    names = [name.upper() for name in names]
+    print(names)
+
+
+list_for_demo()
