@@ -17,7 +17,8 @@ def unpacking_sequence():
     print(names)
     print(*names)
 
-    lp_dtl = {1, 10, 2}
+    lp_dtl = (1, 10, 2)
+    sample_runner(lp_dtl[0], lp_dtl[1], lp_dtl[2])
     sample_runner(*lp_dtl)
 
     # print(type(names))
