@@ -10,7 +10,7 @@ def basics():
     names = ('abc', 'pqr', 'lmn', 'abc', 'pqr')
     print(names)
 
-    names = tuple(['abc', 'pqr', 'lmn'])
+    names = tuple(['abc', 'pqr', 'lmn', 'abc', 'pqr'])
     print(names)
 
     # names[2] = 'jjj'
