@@ -1,12 +1,19 @@
 class Abc:
-    pass
+
+    def __init__(self, a, b, c):  # constructor
+        self.a = a
+        self.b = b
+        self.c = ob1
+
+    def print_abc(self):
+        print(f'a = {self.a}, b = {self.b}, c = {self.c}')
 
 
 class Car:
 
     speed = 20  # state
     light = 0   # state
-    self = 10
+    self = 10  # very bad practice, non conventional
     # is = 10
     # in = 10
 
@@ -20,4 +27,4 @@ class Car:
         self.light = 0
 
     def print_car(self):
-        print(f' Speed {self.speed}, Light {self.light}')
+        print(f' Speed {self.speed}, Light {self.light}, Self {id(self)} ')

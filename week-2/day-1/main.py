@@ -7,6 +7,7 @@ def classes_and_objejcts():
     cr.speed = 20
     cr.light = 30
     cr.print_car()
+    print(id(cr))
 
     cr.speed_up()
     cr.turn_on_light()
@@ -16,6 +17,8 @@ def classes_and_objejcts():
     print(self)
 
     cr1 = Car()
+    print(id(cr1))
+
     cr2 = Car()
     cr3 = Car()
     cr4 = Car()
@@ -29,5 +32,9 @@ def classes_and_objejcts():
     abc = Abc()  # object
 
 
+def classes_obj_constructor():
+    ob1 = Abc(10, 20, 30)
+
+
 if __name__ == '__main__':
-    classes_and_objejcts()
+    classes_obj_constructor()
