@@ -12,4 +12,4 @@ class InstDtls:
 
 class Empty:
     def __init__(self, a) -> None:
-        self.a = a
+        self._a = a
