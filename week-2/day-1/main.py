@@ -80,11 +80,13 @@ def cls_inst_dtls():
 
 
 def empty_dtl():
-    em = Empty()
+    em = Empty(456)
     em.abc = 1233
+    em.abzxxx = 'kjjgj'
     Empty.abv = 122
+    em.sdfjsldghlksdfhgkdshgkldshgdlsk = 'ffjfjfj'
 
-    print(em.abc, em.abv)
+    print(em.abc, em.abv, em.a)
 
 
 if __name__ == '__main__':

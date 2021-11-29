@@ -11,4 +11,5 @@ class InstDtls:
 
 
 class Empty:
-    pass
+    def __init__(self, a) -> None:
+        self.a = a
