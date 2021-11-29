@@ -1,6 +1,7 @@
 from datetime import date
 from car import Car, Abc
 from builtin_classes import AgeCalculator, Employee
+from instance_class_details import InstDtls
 # import car
 
 
@@ -52,5 +53,25 @@ def emp():
     e.info()
 
 
+def cls_inst_dtls():
+    dtl1 = InstDtls('inst1')
+
+    dtl2 = InstDtls('inst2')
+
+    dtl3 = InstDtls('inst3')
+
+    print('Before Setting CLS')
+    print(dtl1.cls_prop, ',', dtl2.cls_prop, ',', dtl3.cls_prop)
+    print('After Setting CLS')
+    dtl1.cls_prop = 'cls1'
+    print(dtl1.cls_prop, ',', dtl2.cls_prop, ',', dtl3.cls_prop)
+    print('----------------------------')
+    print('Before Setting INST')
+    print(dtl1.inst_prop, ',', dtl2.inst_prop, ',', dtl3.inst_prop)
+    print('After Setting INST')
+    dtl1.inst_prop = 'inst11'
+    print(dtl1.inst_prop, ',', dtl2.inst_prop, ',', dtl3.inst_prop)
+
+
 if __name__ == '__main__':
-    emp()
+    cls_inst_dtls()
