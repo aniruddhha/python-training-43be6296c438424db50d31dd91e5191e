@@ -5,6 +5,9 @@ class AgeCalculator:  # CapWords
 
     def calculate_age(self, dob) -> int:  # underscore seperated
         today = date.today()
+
+        
+
         return today.year - dob.year
 
 

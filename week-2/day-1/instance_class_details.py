@@ -12,4 +12,4 @@ class InstDtls:
 
 class Empty:
     def __init__(self, a) -> None:
-        self._a = a
+        self._a = a  # using __ is not making any variable private, it is just a name alteration

@@ -92,4 +92,4 @@ def empty_dtl():
 
 
 if __name__ == '__main__':
-    empty_dtl()
+    age()
