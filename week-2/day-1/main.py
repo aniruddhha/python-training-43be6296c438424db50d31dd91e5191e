@@ -1,4 +1,5 @@
-from car import Car, Abc
+from datetime import date
+from car import Car, Abc, AgeCalculator
 # import car
 
 
@@ -36,5 +37,14 @@ def classes_obj_constructor():
     ob1 = Abc(10, 20, 30)
 
 
+def age():
+    ac = AgeCalculator()
+    print(
+        ac.calculate_age(
+            date(1555, 11, 20)
+        )
+    )
+
+
 if __name__ == '__main__':
-    classes_obj_constructor()
+    age()
