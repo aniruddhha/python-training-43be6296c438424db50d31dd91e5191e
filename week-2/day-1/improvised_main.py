@@ -7,7 +7,10 @@ class ImprovisedMain:
         age = int(input('Enter Age : '))
 
         if(age > 85):
-            raise BadAgeException('Age must be less that 85')
+            ex = BadAgeException('Age must be less that 85')
+            ex.abc()
+            ex.with_traceback(None)
+            raise ex
 
 
 if __name__ == '__main__':
