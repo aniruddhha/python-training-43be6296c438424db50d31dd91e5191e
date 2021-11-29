@@ -8,3 +8,7 @@ class InstDtls:
     def inst_def(self): pass
 
     def cls_def(self): pass
+
+
+class Empty:
+    pass

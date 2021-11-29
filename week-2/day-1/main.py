@@ -1,7 +1,7 @@
 from datetime import date
 from car import Car, Abc
 from builtin_classes import AgeCalculator, Employee
-from instance_class_details import InstDtls
+from instance_class_details import Empty, InstDtls
 # import car
 
 
@@ -64,10 +64,13 @@ def cls_inst_dtls():
     print(dtl1.cls_prop, ',', dtl2.cls_prop, ',', dtl3.cls_prop)
     print('After Setting CLS')
 
-    dtl1.cls_prop = 'cls1'
+    # dtl1.cls_prop = 'cls1'  # what was is it ?
     InstDtls.cls_prop = 'cls1'
 
-    print(dtl1.cls_prop, ',', dtl2.cls_prop, ',', dtl3.cls_prop)
+    print(dtl1.cls_prop, ',', dtl2.cls_prop,
+          ',', dtl3.cls_prop)  # okay but bad
+    print(InstDtls.cls_prop, ',', InstDtls.cls_prop, ',',
+          InstDtls.cls_prop)  # way to access class variables
     print('----------------------------')
     print('Before Setting INST')
     print(dtl1.inst_prop, ',', dtl2.inst_prop, ',', dtl3.inst_prop)
@@ -76,5 +79,14 @@ def cls_inst_dtls():
     print(dtl1.inst_prop, ',', dtl2.inst_prop, ',', dtl3.inst_prop)
 
 
+def empty_dtl():
+    em = Empty()
+    em.abc = 1233
+    Empty.abv = 122
+
+    print(em.abc, em.abv)
+
+
 if __name__ == '__main__':
     cls_inst_dtls()
+    empty_dtl()
