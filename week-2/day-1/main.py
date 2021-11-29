@@ -63,7 +63,10 @@ def cls_inst_dtls():
     print('Before Setting CLS')
     print(dtl1.cls_prop, ',', dtl2.cls_prop, ',', dtl3.cls_prop)
     print('After Setting CLS')
+
     dtl1.cls_prop = 'cls1'
+    InstDtls.cls_prop = 'cls1'
+
     print(dtl1.cls_prop, ',', dtl2.cls_prop, ',', dtl3.cls_prop)
     print('----------------------------')
     print('Before Setting INST')
