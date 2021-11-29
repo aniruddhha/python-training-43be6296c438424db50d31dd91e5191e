@@ -14,5 +14,5 @@ class BadAgeException(Exception, Abc):
         self.message = message
 
     def abc(self):
-        super().abc()
+        super(BadAgeException, self).abc()
         print('from bad exception')
