@@ -1,5 +1,6 @@
 from datetime import date
-from car import Car, Abc, AgeCalculator
+from car import Car, Abc
+from builtin_classes import AgeCalculator, Employee
 # import car
 
 
@@ -46,5 +47,10 @@ def age():
     )
 
 
+def emp():
+    e = Employee('abc', 35)
+    e.info()
+
+
 if __name__ == '__main__':
-    age()
+    emp()

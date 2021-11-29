@@ -1,6 +1,3 @@
-from datetime import date
-
-
 class Abc:
 
     def __init__(self, a, b, c):  # constructor
@@ -31,10 +28,3 @@ class Car:
 
     def print_car(self):
         print(f' Speed {self.speed}, Light {self.light}, Self {id(self)} ')
-
-
-class AgeCalculator:
-
-    def calculate_age(self, dob) -> int:
-        today = date.today()
-        return today.year - dob.year
