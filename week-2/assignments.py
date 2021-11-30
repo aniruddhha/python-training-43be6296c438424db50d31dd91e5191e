@@ -5,4 +5,4 @@
         - salary should be > 15000 and less that 25Lakhs
         - age should be within 18 to 60 
         - name should be atleast 8 char long
-    '''
+'''
