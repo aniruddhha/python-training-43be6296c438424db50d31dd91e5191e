@@ -44,11 +44,11 @@ class Menu:
                 self.display_admin_menu()
                 ch: int = int(input('Enter Your Choice : '))
                 if(ch == 6):
-                    return
+                    continue
             elif (ch == 2):
                 self.display_user_menu()
                 ch: int = int(input('Enter Your Choice : '))
                 if(ch == 5):
-                    return
+                    continue
             else:
                 exit(0)
