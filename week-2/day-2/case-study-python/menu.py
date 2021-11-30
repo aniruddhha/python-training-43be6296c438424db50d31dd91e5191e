@@ -3,6 +3,7 @@ Responsible for displaying system menu.
 '''
 from users import UserDatabase
 from bank import Bank
+from admin_menu_ops import AdminMenuOperation
 
 
 class Menu:
@@ -11,6 +12,7 @@ class Menu:
         self.udb = UserDatabase()
         self.bank = Bank()
         self.user_id = ''
+        self.admin_ops = AdminMenuOperation(self.udb, self.bank)
 
     def display_main_menu(self) -> None:
         print('''
@@ -70,22 +72,11 @@ class Menu:
     def cli_input_admin(self) -> None:
         ch: int = self.cli_input(2)
         if(ch == 1):
-            print('\n For Creating Bank Account Enter Following Details')
-            user_name = input('\n Enter User Name : ')
-            password = input('\n Enter Password : ')
-
-            bu = self.udb.create_new_user(
-                user_name=user_name,
-                password=password,
-                role='user'
-            )
-
-            ba = self.bank.create_bank_account(user_id=bu.id)
-            print('\n --- Account Successfully Created ----')
-            print(ba)
+            self.admin_ops.create_bank_account()
         elif ch == 2:
-            for ac in self.bank.all_accounts():
-                print(f'{ac._ac_num}\t {ac._balance} \t {ac._is_active}')
+            self.admin_ops.all_accounts()
+        elif ch == 6:
+            self.admin_ops.deposit()
         elif ch == 8:
             return
         elif(ch == 7):

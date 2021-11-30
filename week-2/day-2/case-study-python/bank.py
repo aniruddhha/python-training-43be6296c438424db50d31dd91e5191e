@@ -40,9 +40,14 @@ class Bank:
     ) -> int: pass
 
     def deposit(
+        self,
         source: BankAccount,
         amt: int
-    ) -> int: pass
+    ) -> int:
+        for ind, ac in self._accounts:
+            if(ac.get_ac_num() == source.get_ac_num()):
+                self._accounts[ind].set_balance(ac.get_balance() + amt)
+                break
 
     def activate_account(source: BankAccount) -> None: pass
 
@@ -57,3 +62,6 @@ class Bank:
 
     def all_accounts(self) -> List[BankAccount]:
         return self._accounts
+
+    def get_ac_by_num(self, ac_num: str) -> BankAccount:
+        return next((ac for ac in self._accounts if ac_num == ac.get_ac_num()), None)

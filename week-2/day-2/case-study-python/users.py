@@ -10,7 +10,7 @@ class UserDatabase:
             BankUser(2, 'pqr', 'pqr', 'admin'),
         ]
 
-    def allUsers(self) -> List[BankUser]:
+    def all_users(self) -> List[BankUser]:
         return self._users
 
     def check_user_credentials(self, **kwargs) -> bool:
