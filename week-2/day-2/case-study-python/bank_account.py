@@ -19,3 +19,6 @@ class BankAccount:
 
     def de_activate_account(self) -> None:
         self._is_active = False
+
+    def __str__(self) -> str:  # converts state into string representation
+        return f'\n Ac # : {self._ac_num} \n Balance : {self._balance} \n Status : {self._is_active}'

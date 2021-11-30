@@ -69,7 +69,19 @@ class Menu:
     def cli_input_admin(self) -> None:
         ch: int = self.cli_input(2)
         if(ch == 1):
-            self.bank.create_bank_account(user_id=1)
+            print('\n For Creating Bank Account Enter Following Details')
+            user_name = input('\n Enter User Name : ')
+            password = input('\n Enter Password : ')
+
+            bu = self.udb.create_new_user(
+                user_name=user_name,
+                password=password,
+                role='user'
+            )
+
+            ba = self.bank.create_bank_account(user_id=bu.id)
+            print('--- Account Successfully Created ----')
+            print(ba)
         if(ch == 7):
             return
         elif(ch == 6):

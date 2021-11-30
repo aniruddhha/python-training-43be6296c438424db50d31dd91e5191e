@@ -18,6 +18,7 @@ class Bank:
     def create_bank_account(self, **kwargs) -> BankAccount:
         user_id = kwargs.get('user_id')
         ac_num = self.generate_account_number()
+        # this code is written just to show you next operation
         ac = self.udb.get_user_by_id(user_id)
 
         ba: BankAccount = BankAccount(ac_num, ac)
