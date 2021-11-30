@@ -44,9 +44,9 @@ class Bank:
         source: BankAccount,
         amt: int
     ) -> int:
-        for ind, ac in self._accounts:
+        for ac in self._accounts:
             if(ac.get_ac_num() == source.get_ac_num()):
-                self._accounts[ind].set_balance(ac.get_balance() + amt)
+                ac.set_balance(ac.get_balance() + amt)
                 break
 
     def activate_account(source: BankAccount) -> None: pass
