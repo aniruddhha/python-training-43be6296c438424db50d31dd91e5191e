@@ -34,12 +34,13 @@ class Menu:
         print('''
         \n --- Admin Menu ---
         1. Create Account
-        2. Display Balance
-        3. Transfer
-        4. Withdraw
-        5. Deposit
-        6. Status
-        7. Back
+        2. All Accounts
+        3. Display Balance
+        4. Transfer
+        5. Withdraw
+        6. Deposit
+        7. Status
+        8. Back
         ''')
 
     def display_status_sub_menu(self) -> None:
@@ -82,9 +83,12 @@ class Menu:
             ba = self.bank.create_bank_account(user_id=bu.id)
             print('\n --- Account Successfully Created ----')
             print(ba)
-        if(ch == 7):
+        elif ch == 2:
+            for ac in self.bank.all_accounts():
+                print(f'{ac._ac_num}\t {ac._balance} \t {ac._is_active}')
+        elif ch == 8:
             return
-        elif(ch == 6):
+        elif(ch == 7):
             self.cli_input_status()
 
     def cli_input_user(self) -> None:

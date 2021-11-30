@@ -3,6 +3,7 @@ Holds the data and performs the bank operations,
 which are mentioned as features.
 '''
 
+from typing import List
 from bank_account import BankAccount
 from users import UserDatabase
 import string
@@ -53,3 +54,6 @@ class Bank:
                 string.ascii_uppercase + string.digits, k=16
             )
         )
+
+    def all_accounts(self) -> List[BankAccount]:
+        return self._accounts
