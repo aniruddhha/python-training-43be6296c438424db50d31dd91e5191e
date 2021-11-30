@@ -5,8 +5,8 @@ from bank_user import BankUser
 class UserDatabase:
     def __init__(self) -> None:
         self._users = [  # instance variable
-            BankUser('abc', 'abc', 'user'),
-            BankUser('pqr', 'pqr', 'admin'),
+            BankUser(1, 'abc', 'abc', 'user'),
+            BankUser(2, 'pqr', 'pqr', 'admin'),
         ]
 
     def allUsers(self) -> List[BankUser]:
@@ -25,3 +25,6 @@ class UserDatabase:
             else:
                 sts = False
         return sts
+
+    def get_user_by_id(self, id: int) -> BankUser:
+        return next((x for x in self._users if x.id == id), None)

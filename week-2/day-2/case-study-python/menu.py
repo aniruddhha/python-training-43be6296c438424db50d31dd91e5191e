@@ -2,12 +2,15 @@
 Responsible for displaying system menu.
 '''
 from users import UserDatabase
+from bank import Bank
 
 
 class Menu:
 
     def __init__(self) -> None:
         self.udb = UserDatabase()
+        self.bank = Bank()
+        self.user_id = ''
 
     def display_main_menu(self) -> None:
         print('''
@@ -65,6 +68,8 @@ class Menu:
 
     def cli_input_admin(self) -> None:
         ch: int = self.cli_input(2)
+        if(ch == 1):
+            self.bank.create_bank_account(user_id=1)
         if(ch == 7):
             return
         elif(ch == 6):
