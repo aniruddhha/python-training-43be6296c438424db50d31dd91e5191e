@@ -4,7 +4,7 @@ from bank_user import BankUser
 
 class UserDatabase:
     def __init__(self) -> None:
-        self._users = [
+        self._users = [  # instance variable
             BankUser('abc', 'abc', 'user'),
             BankUser('pqr', 'pqr', 'admin'),
         ]
@@ -12,7 +12,8 @@ class UserDatabase:
     def allUsers(self) -> List[BankUser]:
         return self._users
 
-# python users.py 
+# python users.py
+
 
 if __name__ == '__main__':
     udb: UserDatabase = UserDatabase()
