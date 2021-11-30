@@ -5,4 +5,9 @@ perticular user or not.
 
 
 class RoleOperations:
-    pass
+
+    def operations(role: str) -> str:
+        if(role == 'admin'):
+            pass
+        else:
+            pass
