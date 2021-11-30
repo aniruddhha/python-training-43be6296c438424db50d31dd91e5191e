@@ -21,4 +21,8 @@ class BankAccount:
         self._is_active = False
 
     def __str__(self) -> str:  # converts state into string representation
-        return f'\n Ac # : {self._ac_num} \n Balance : {self._balance} \n Status : {self._is_active}'
+        return f'''
+         Ac # : {self._ac_num} 
+         Balance : {self._balance} 
+         Status : {self._is_active}
+        '''

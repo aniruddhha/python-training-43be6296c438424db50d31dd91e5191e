@@ -80,7 +80,7 @@ class Menu:
             )
 
             ba = self.bank.create_bank_account(user_id=bu.id)
-            print('--- Account Successfully Created ----')
+            print('\n --- Account Successfully Created ----')
             print(ba)
         if(ch == 7):
             return
