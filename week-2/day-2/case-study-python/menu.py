@@ -95,7 +95,13 @@ class Menu:
     def admin_authentication(self) -> bool:
         user_name = input('User Name : ')
         password = input('Password : ')
-        if(self.udb.check_user_credentials(user_name=user_name, password=password, role='admin')):
+        if(
+            self.udb.check_user_credentials(
+                user_name=user_name,
+                password=password,
+                role='admin'
+            )
+        ):
             self.cli_input_admin()
         else:
             print('Un Authorized User')
