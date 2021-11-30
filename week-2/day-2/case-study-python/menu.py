@@ -59,19 +59,19 @@ class Menu:
             ch = 0
         return ch
 
-    def cli_input_admin(self):
+    def cli_input_admin(self) -> None:
         ch: int = self.cli_input(2)
         if(ch == 7):
             return
         elif(ch == 6):
             self.cli_input_status()
 
-    def cli_input_user(self):
+    def cli_input_user(self) -> None:
         ch: int = self.cli_input(3)
         if(ch == 5):
             return
 
-    def cli_input_status(self):
+    def cli_input_status(self) -> None:
         ch: int = self.cli_input(4)
         if(ch == 3):
             self.cli_input(2)
