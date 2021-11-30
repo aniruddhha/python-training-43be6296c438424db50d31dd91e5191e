@@ -86,7 +86,7 @@ class Menu:
             if(ch == 1):
                 self.admin_authentication()
             elif (ch == 2):
-                self.cli_input_user()
+                self.user_authentication()
             elif ch == 0:
                 print('\n Please Enter Numbers only')
             else:
@@ -104,4 +104,18 @@ class Menu:
         ):
             self.cli_input_admin()
         else:
-            print('Un Authorized User')
+            print('Un Authorized Admin')
+
+    def user_authentication(self) -> bool:
+        user_name = input('User Name : ')
+        password = input('Password : ')
+        if(
+            self.udb.check_user_credentials(
+                user_name=user_name,
+                password=password,
+                role='user'
+            )
+        ):
+            self.cli_input_user()
+        else:
+            print('Un Authorized user')
