@@ -35,19 +35,25 @@ class Menu:
             6. Exit
         ''')
 
+    def cli_input(self, which: int) -> int:
+        if which == 1:
+            self.display_main_menu()
+        elif which == 2:
+            self.display_admin_menu()
+        else:
+            self.display_user_menu()
+        return int(input('Enter Your Choice : '))
+
     def cli(self) -> None:
         while True:
-            self.display_main_menu()
-            ch: int = int(input('Enter Your Choice : '))
+            ch: int = self.cli_input(1)
 
             if(ch == 1):
-                self.display_admin_menu()
-                ch: int = int(input('Enter Your Choice : '))
+                ch: int = self.cli_input(2)
                 if(ch == 6):
                     continue
             elif (ch == 2):
-                self.display_user_menu()
-                ch: int = int(input('Enter Your Choice : '))
+                ch: int = self.cli_input(3)
                 if(ch == 5):
                     continue
             else:
