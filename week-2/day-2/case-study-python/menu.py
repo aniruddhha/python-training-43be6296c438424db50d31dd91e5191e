@@ -42,7 +42,12 @@ class Menu:
             self.display_admin_menu()
         else:
             self.display_user_menu()
-        return int(input('Enter Your Choice : '))
+
+        try:
+            ch: int = int(input('Enter Your Choice : '))
+        except:
+            ch = 0
+        return ch
 
     def cli(self) -> None:
         while True:
@@ -56,5 +61,7 @@ class Menu:
                 ch: int = self.cli_input(3)
                 if(ch == 5):
                     continue
+            elif ch == 0:
+                print('\n Please Enter Numbers only')
             else:
                 exit(0)
