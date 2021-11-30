@@ -1,9 +1,13 @@
 '''
 Responsible for displaying system menu.
 '''
+from users import UserDatabase
 
 
 class Menu:
+
+    def __init__(self) -> None:
+        self.udb = UserDatabase()
 
     def display_main_menu(self) -> None:
         print('''
@@ -80,10 +84,18 @@ class Menu:
         while True:
             ch: int = self.cli_input(1)
             if(ch == 1):
-                self.cli_input_admin()
+                self.admin_authentication()
             elif (ch == 2):
                 self.cli_input_user()
             elif ch == 0:
                 print('\n Please Enter Numbers only')
             else:
                 exit(0)
+
+    def admin_authentication(self) -> bool:
+        user_name = input('User Name : ')
+        password = input('Password : ')
+        if(self.udb.check_user_credentials(user_name=user_name, password=password, role='admin')):
+            self.cli_input_admin()
+        else:
+            print('Un Authorized User')

@@ -12,10 +12,16 @@ class UserDatabase:
     def allUsers(self) -> List[BankUser]:
         return self._users
 
-# python users.py
+    def check_user_credentials(self, **kwargs) -> bool:
+        user_name = kwargs.get('user_name')
+        password = kwargs.get('password')
+        role = kwargs.get('role')
 
-
-if __name__ == '__main__':
-    udb: UserDatabase = UserDatabase()
-    for user in udb.allUsers():
-        print(f'{user.user_name}, {user.password}, {user.role}')
+        sts: bool = False
+        for user in self._users:
+            if(user.user_name == user_name and user.password == password and user.role == role):
+                sts = True
+                break
+            else:
+                sts = False
+        return sts
