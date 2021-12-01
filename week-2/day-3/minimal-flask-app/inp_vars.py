@@ -11,4 +11,5 @@ def print_my_name(nm: str):
 
 @app.route('/addition/<int:num1>/<int:num2>')
 def addition(num1: int, num2: int):
+    
     return f'<h1> Addition {num1} and {num2} is {num1 + num2}</h1>'
