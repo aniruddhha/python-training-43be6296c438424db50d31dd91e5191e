@@ -21,6 +21,7 @@ class AdminMenuOperation:
 
         ba = self.bank.create_bank_account(user_id=bu.id)
         print('\n --- Account Successfully Created ----')
+
         print(ba)
 
     def all_accounts(self):
