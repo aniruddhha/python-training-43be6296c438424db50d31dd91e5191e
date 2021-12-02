@@ -7,7 +7,7 @@
     <body>
        <ol>
            {% for mn in menus %}
-            <li> <a href="{{mn}}"> {{mn}} </a> </li>
+            <li> <a href="{{mn.get('url')}}"> {{mn.get('ttl')}} </a> </li>
            {% endfor %}
        </ol>
     </body>
