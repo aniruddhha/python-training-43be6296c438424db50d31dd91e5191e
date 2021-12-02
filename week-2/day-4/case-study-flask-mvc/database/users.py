@@ -15,9 +15,8 @@ class UserDatabase:
         ]
 
     def user_by_creds(self, username, password) -> User:
-        return next(
-            (user for user in self.users if (
-                user.username == username and user.password == password)
-             ),
-            None
-        )
+        for user in self.users:
+            if(user.username == username and user.password == password):
+                return user
+
+        return None

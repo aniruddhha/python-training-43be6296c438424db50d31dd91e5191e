@@ -20,6 +20,7 @@ def dashboard():
     password = request.form['password']
 
     user = db.user_by_creds(user_name, password)
+
     if(user.role == 'admin'):
         menus: List[str] = [
             {'ttl': 'Create Account', 'url': url_for('create_account')},
