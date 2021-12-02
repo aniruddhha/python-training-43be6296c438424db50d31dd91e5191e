@@ -43,3 +43,9 @@ def show_sq():
     names = ['abc', 'pqr', 'lmn', 'zyt']
 
     return render_template('names.html', nms=names)
+
+
+@app.errorhandler(404)
+def error_handler(error):
+    print(type(error))
+    return render_template('404.html'), 404
