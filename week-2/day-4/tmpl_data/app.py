@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -17,3 +17,11 @@ def show_my_name(nm: str = 'hi'):
 @app.route('/addition')
 def form_addition():
     return render_template('addition.html')
+
+
+@app.route('/calculation', methods=['POST', 'GET'])
+def perform_calculation():
+    num1 = int(request.form['num1'])
+    num2 = int(request.form['num2'])
+
+    return render_template('calculation.html', result=(num1 + num2))
