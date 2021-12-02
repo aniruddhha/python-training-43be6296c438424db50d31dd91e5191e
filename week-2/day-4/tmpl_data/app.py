@@ -36,3 +36,10 @@ def perform_calculation(op: str):
         result = num1/num2
 
     return render_template('calculation.html', result=result, op=action)
+
+
+@app.route('/seq')
+def show_sq():
+    names = ['abc', 'pqr', 'lmn', 'zyt']
+
+    return render_template('names.html', nms=names)
