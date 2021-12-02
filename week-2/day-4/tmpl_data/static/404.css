@@ -19,10 +19,11 @@
 			 font-size:80px;
 			 }
 			 
-			 .link_404{			 
+.link_404{			 
 	color: #fff!important;
     padding: 10px 20px;
     background: #39ac31;
     margin: 20px 0;
     display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
+	.contant_box_404{ margin-top:-50px;
+}

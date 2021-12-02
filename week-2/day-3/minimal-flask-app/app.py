@@ -4,6 +4,10 @@ from markupsafe import escape
 app = Flask(__name__)
 
 
+str = '  your high scrore is {nm} '.format(nm=10)
+str = f'your high score is {10}'
+
+
 @app.route("/")  # decorator
 def hello_world():
 
