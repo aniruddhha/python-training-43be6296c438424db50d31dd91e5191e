@@ -24,10 +24,15 @@ def perform_calculation(op: str):
     num1 = int(request.form['num1'])
     num2 = int(request.form['num2'])
 
-    result: int = 0
-    if op == 'add':
-        result = num1 + num2
-    elif op == 'sub':
-        result = num1 - num2
+    action = request.form['action']
 
-    return render_template('calculation.html', result=result, op=op)
+    if action == 'Add':
+        result = num1 + num2
+    elif action == 'Sub':
+        result = num1 - num2
+    elif action == 'Mul':
+        result = num1 * num2
+    else:
+        result = num1/num2
+
+    return render_template('calculation.html', result=result, op=action)
