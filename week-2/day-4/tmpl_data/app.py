@@ -12,3 +12,8 @@ def index():
 @app.route('/myname/<nm>')
 def show_my_name(nm: str = 'hi'):
     return render_template('user.html', nm=nm)
+
+
+@app.route('/addition')
+def form_addition():
+    return render_template('addition.html')
