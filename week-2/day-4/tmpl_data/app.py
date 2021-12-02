@@ -19,8 +19,8 @@ def form_addition():
     return render_template('addition.html')
 
 
-@app.route('/calculation', methods=['POST', 'GET'])
-def perform_calculation():
+@app.route('/calculation/<op>', methods=['POST', 'GET'])
+def perform_calculation(op: str):
     num1 = int(request.form['num1'])
     num2 = int(request.form['num2'])
 

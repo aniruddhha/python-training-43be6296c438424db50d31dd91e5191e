@@ -4,7 +4,7 @@
         <title>Addition</title>
     </head>
     <body>
-        <form action="/calculation" method="POST">
+        <form action="{{ url_for('perform_calculation', op='add',dt=123, mt=89) }}" method="POST">
             <div>
                 <input type="number" name="num1" placeholder="Number 1"/>
             </div>
