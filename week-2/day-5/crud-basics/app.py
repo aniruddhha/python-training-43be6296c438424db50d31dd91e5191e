@@ -13,7 +13,7 @@ mobiles = [
 
 @app.route('/create', methods=['POST'])
 def create():
-    mobile = request.json
+    mobile = request.json  # reading data from request body
     mobiles.append(mobile)
     return {
         'status': 'success',
@@ -38,9 +38,14 @@ def update():
 
 
 @app.route('/delete/<int:id>', methods=['DELETE'])
-def delete(id: int):
-    mobile: dict = next((mb for mb in mobiles if mb == id))
+def delete(id: int):  # reading data from path variable
+    mobile: dict = next((mb for mb in mobiles if mb.get('id') == id), None)
     mobiles.remove(mobile)
+    return {
+        'status': 'success',
+        'message': 'fetching all mobiles',
+        'result': mobiles
+    }
 
 
 @app.route('/all')
@@ -52,5 +57,13 @@ def find_all(): return {
 
 
 @app.route('/one')
-def find_one(): pass
+def find_one():
+    id = request.args.get('mb_id')  # reading data from query parameter
+    print(f'id is {id}')
 
+    mobile = next((mb for mb in mobiles if mb.get('id') == id), None)
+    return {
+        'status': 'success',
+        'message': 'fetching single mobile',
+        'result': mobile
+    }
