@@ -37,6 +37,3 @@ print(json.dumps(dct))
 
 tpl = (67, 89, 90, None)
 print(json.dumps(tpl))
-
-
-print()
