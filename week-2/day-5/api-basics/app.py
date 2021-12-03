@@ -29,4 +29,5 @@ def demo_api():
 
 @app.route('/config')
 def demo_config_api():
-    return jsonify(Config())
+    cfg = Config()
+    return vars(cfg)

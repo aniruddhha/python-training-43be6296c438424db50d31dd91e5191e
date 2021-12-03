@@ -6,3 +6,7 @@
         - age should be within 18 to 60 
         - name should be atleast 8 char long
 '''
+
+'''
+        2. write a code for converting class to dictionary and vice a versa
+'''
