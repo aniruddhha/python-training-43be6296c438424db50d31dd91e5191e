@@ -1,5 +1,6 @@
 from typing import Dict
-from flask import Flask
+from flask import Flask, jsonify
+from db.config import Config
 
 app = Flask(__name__)
 
@@ -24,3 +25,8 @@ def demo_api():
     }
 
     return dm
+
+
+@app.route('/config')
+def demo_config_api():
+    return jsonify(Config())
