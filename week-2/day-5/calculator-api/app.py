@@ -25,3 +25,28 @@ def addition_in_body():
     result = num1 + num2
 
     return {'status': 'success', 'message': f'addition of {num1} and {num2}', 'result': result}
+
+
+@app.route('/calc', methods=["POST"])
+def calculation():
+    body: dict = request.json
+    num1 = body.get('num1')
+    num2 = body.get('num2')
+    op = body.get('op')
+
+    res = dict()
+    res.update({'message': 'operation successful', 'status': 'success'})
+    if op == 'add':
+        res.update({'result': num1 + num2})
+    elif op == 'sub':
+        res.update({'result': num1 - num2})
+    elif op == 'mul':
+        res.update({'result': num1 * num2})
+    else:
+        try:
+            res.update({'result': num1 / num2})
+        except ZeroDivisionError:
+            res.clear()
+            res.update({'status': 'fail', 'message': 'num2 can not be zero'})
+
+    return res
