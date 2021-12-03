@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -15,4 +15,13 @@ def addition(num1: int, num2: int):
 
 @app.route('/addition_body', methods=['POST'])
 def addition_in_body():
-    return {'status': 'in progress', 'message': 'api is under development'}
+
+    print(request.json)
+    print(type(request.json))
+
+    body: dict = request.json
+    num1 = body.get('num1')
+    num2 = body.get('num2')
+    result = num1 + num2
+
+    return {'status': 'success', 'message': f'addition of {num1} and {num2}', 'result': result}
