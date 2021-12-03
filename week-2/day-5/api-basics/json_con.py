@@ -18,9 +18,16 @@ cfg = Config()
 
 print(json.dumps(cfg, default=con_obj))
 
-print(json.dumps(cfg, default=lambda o: vars(o)))
+print(
+    json.dumps(
+        cfg,
+        default=lambda o: vars(o),
+        sort_keys=True,
+        indent=2
+    )
+)
 
-js_str = json.dumps(cfg, default=lambda o: vars(o))
+js_str = json.dumps(cfg, default=lambda o: vars(o), sort_keys=True, indent=4)
 print(type(js_str))
 # conevert all nested objects to the dictionary
 
