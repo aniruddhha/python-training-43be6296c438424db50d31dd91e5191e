@@ -15,3 +15,4 @@ class Config:
         self.url = 'db://anc'
         self.port = 1244
         self.nw = NwConfig()
+        self.lst = ['abc', 'pqr', 'lmn']

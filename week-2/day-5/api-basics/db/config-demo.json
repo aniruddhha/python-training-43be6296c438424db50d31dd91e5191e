@@ -1,0 +1,15 @@
+{
+    "url": "db://anc",
+    "port": 1224,
+    "nw": {
+        "ip": "localhost",
+        "bs": {
+            "dt": "hi"
+        }
+    },
+    "lst": [
+        "abc",
+        "pqr",
+        "lmn"
+    ]
+}
