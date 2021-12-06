@@ -14,4 +14,4 @@ class Connectivity:
             )
         except:
             print('Your credentials are wrong')
-            db = None
+            self.db = None

@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 connectivity = Connectivity()
 db = connectivity.db
-print(db)
 
 
 @app.route('/')
