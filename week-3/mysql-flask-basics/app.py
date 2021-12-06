@@ -90,6 +90,8 @@ def update_employee():
         'res': 1
     }
 
+# select * from emp_dt where emp_id = 10;
+
 
 @app.route('/emp/<int:id>')
 def find_one(): pass
