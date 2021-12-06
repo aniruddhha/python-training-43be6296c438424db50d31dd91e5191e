@@ -94,4 +94,14 @@ def update_employee():
 
 
 @app.route('/emp/<int:id>')
-def find_one(): pass
+def find_one(id: int):
+    csr: Cursor = db.cursor()
+    sql = 'select * from emp_dt where emp_id = %s'
+    csr.execute(sql, (id))
+    row = csr.fetchone()
+    csr.close()
+    return {
+        'sts': 'success',
+        'msg': f'fetched data for {id}',
+        'res': row
+    }
