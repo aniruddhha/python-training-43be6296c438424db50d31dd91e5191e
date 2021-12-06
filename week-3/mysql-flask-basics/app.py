@@ -48,3 +48,12 @@ def all_employees():
         'status': 'success',
         'res': rows
     }
+
+
+@app.route('/emp', ['DELETE'])
+def delete_employee():
+    return {
+        'msg': 'operation in progress',
+        'status': 'inprogress',
+        'res': 0
+    }
