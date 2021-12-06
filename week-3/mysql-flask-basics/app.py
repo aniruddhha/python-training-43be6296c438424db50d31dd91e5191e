@@ -25,7 +25,7 @@ def create_employee():
     print(emp)
 
     csr: Cursor = db.cursor()
-    cnt = csr.execute('insert into emp_dt values(%s, %s)', emp)
+    cnt = csr.execute('insert into emp_dt values(%(id)s, %(nm)s)', emp)
     return {
         'sts': 'success',
         'msg': 'employee saved successfully',
