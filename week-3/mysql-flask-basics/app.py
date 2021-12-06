@@ -91,3 +91,5 @@ def update_employee():
     }
 
 
+@app.route('/emp/<int:id>')
+def find_one(): pass
