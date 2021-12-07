@@ -40,7 +40,7 @@ def create_employee():
         'sts': 'success',
         'msg': 'employee saved successfully',
         'res': cnt
-    }
+    }, 201
 
 
 @app.route('/emp')
@@ -66,7 +66,7 @@ def delete_employee(id: int):
     return {
         'msg': 'employee deleted',
         'status': 'success'
-    }
+    }, 204
 
 
 @app.route('/emp/', methods=['PUT'])
@@ -89,7 +89,7 @@ def update_employee():
         'sts': 'success',
         'msg':  'data updated successfully',
         'res': 1
-    }
+    }, 204
 
 # select * from emp_dt where emp_id = 10;
 
@@ -105,4 +105,4 @@ def find_one(id: int):
         'sts': 'success',
         'msg': f'fetched data for {id}',
         'res': row
-    }
+    }, 200
