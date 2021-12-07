@@ -26,6 +26,7 @@ def before_all_requests():
                 '0123456789sdfsdf',
                 algorithms=['HS256']
             )
+            # if token is verfied, add perticular decoded data in request
             request.app_user = app_user
         except:
             return {
