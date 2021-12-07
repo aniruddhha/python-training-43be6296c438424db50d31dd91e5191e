@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 pyjwt = "*"
+flask = "*"
+flask-restful = "*"
+pymysql = "*"
 
 [dev-packages]
 
