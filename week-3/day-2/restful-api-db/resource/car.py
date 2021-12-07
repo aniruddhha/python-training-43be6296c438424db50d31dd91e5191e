@@ -2,6 +2,8 @@ from flask import request
 from flask_restful import Resource
 from pymysql.connections import Connection
 from pymysql.cursors import Cursor
+import json
+import datetime
 
 
 class Car(Resource):
@@ -30,8 +32,22 @@ class Car(Resource):
         csr.execute(sql)
         cars = csr.fetchall()
         csr.close()
+
+        print(cars)  # it consists of datetime object which is not a json
+        cars_json_str = json.dumps(
+            cars, default=self.default)  # it returns string
+
+        print(cars_json_str)
+        print(type(cars_json_str))
+        # we need dict -> str to dict
+        cars_json_dict = json.loads(cars_json_str)
+
         return {
             'sts': 'success',
             'msg': 'all cars',
-            'res': cars
+            'res': cars_json_dict
         }
+
+    def default(self, o):
+        if isinstance(o, (datetime.date, datetime.datetime)):
+            return o.isoformat()
