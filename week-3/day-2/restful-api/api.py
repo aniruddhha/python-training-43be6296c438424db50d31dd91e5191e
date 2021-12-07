@@ -23,16 +23,23 @@ class HelloWorld(Resource):
 
 
 class ByeBye(Resource):
+    def get(self, bye_id):
+        return {
+            'sts': 'checking',
+            'msg': 'checking flask restful extention',
+            'res': f'Bye Bye is {bye_id}'
+        }
+
     def get(self):
         return {
             'sts': 'checking',
             'msg': 'checking flask restful extention',
-            'res': 'GET'
+            'res': 'Only Bye'
         }
 
 
 api.add_resource(HelloWorld, '/hello')
-api.add_resource(ByeBye, '/bye')
+api.add_resource(ByeBye, '/bye/<bye_id>', endpoint="")
 
 if __name__ == '__main__':
     app.run(debug=True)
