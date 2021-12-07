@@ -3,7 +3,7 @@ from flask_restful import Resource, Api
 from db.connectivity import Connectivity
 from resource.car import Car
 
-con = Connectivity()
+con = Connectivity()  # connection should be initilized only once
 
 app = Flask(__name__)
 
