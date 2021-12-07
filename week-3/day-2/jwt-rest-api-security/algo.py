@@ -14,10 +14,16 @@ from jwt.exceptions import InvalidAlgorithmError, InvalidSignatureError
 
 token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.S2ZL7D-D3VeduQ44Cy2qLRFxHV43gRGSZtlfJ2MJ57g'
 
-try:
-    dt = jwt.decode(token, "123456789", algorithms=["HS256"])
-    print(dt)
-except InvalidSignatureError:
-    print('Signature Did not Match')
-except InvalidAlgorithmError:
-    print('Algorithm Did not Match')
+
+def encode():
+    pass
+
+
+def decode():
+    try:
+        dt = jwt.decode(token, "123456789", algorithms=["HS256"])
+        print(dt)
+    except InvalidSignatureError:
+        print('Signature Did not Match')
+    except InvalidAlgorithmError:
+        print('Algorithm Did not Match')
