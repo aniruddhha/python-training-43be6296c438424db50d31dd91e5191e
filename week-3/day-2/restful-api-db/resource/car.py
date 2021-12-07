@@ -48,6 +48,10 @@ class Car(Resource):
             'res': cars_json_dict
         }
 
+    def update(self): pass
+
+    def find(self): pass
+
     def default(self, o):
         if isinstance(o, (datetime.date, datetime.datetime)):
             return o.isoformat()
