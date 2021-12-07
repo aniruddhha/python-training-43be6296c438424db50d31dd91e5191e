@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
 import jwt
+from jwt.exceptions import InvalidAlgorithmError, InvalidSignatureError
 
 app = Flask(__name__)
 
@@ -16,10 +17,21 @@ def before_all_requests():
             'sts': 'unauthorized',
             'msg': 'you need to pass token'
         }, 401
-
-
-@app.after_request
-def after_all_requests(): pass
+    else:
+        print('in Else Block')
+        token = request.headers.get('sdldkfjskldf')
+        try:
+            app_user = jwt.decode(
+                token,
+                '0123456789sdfsdf',
+                algorithms=['HS256']
+            )
+            request.app_user = app_user
+        except:
+            return {
+                'sts': 'unauthorized',
+                'msg': 'tampered token'
+            }, 401
 
 
 api = Api(app)
@@ -27,6 +39,8 @@ api = Api(app)
 
 class Bank(Resource):
     def get(self):
+        print('In an bank post')
+        print(request.app_user)
         return {
             'sts': 'success',
             'msg': 'balance api',
