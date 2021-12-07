@@ -52,8 +52,9 @@ def all_employees():
     return {
         'msg': 'fetched data successfully',
         'status': 'success',
-        'res': rows
-    }
+        'res': rows,
+        'links': ['http://localhost:5000/emp/10']
+    }, 203
 
 
 @app.route('/emp/<int:id>', methods=['DELETE'])
