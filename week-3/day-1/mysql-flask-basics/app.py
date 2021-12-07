@@ -49,11 +49,15 @@ def all_employees():
     csr.execute('select * from emp_dt')
     rows = csr.fetchall()
     csr.close()
+
+    links = []
+    for rw in rows:
+        links.append(f"http://localhost:5000/emp/{rw.get('id')}")
     return {
         'msg': 'fetched data successfully',
         'status': 'success',
         'res': rows,
-        'links': ['http://localhost:5000/emp/10']
+        'links': links
     }, 203
 
 
