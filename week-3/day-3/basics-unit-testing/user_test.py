@@ -22,6 +22,19 @@ class UserTest(unittest.TestCase):
 
             AppUser(user_name, password)
 
+    def test_invalid_user_name_at(self):
+        with self.assertRaises(InvalidUserNameException):
+            user_name = 'abc@bbbcrrr'
+            password = '1333254'
+
+            AppUser(user_name, password)
+
+    def test_valid_user_name_at(self):
+        user_name = 'abc12345678'
+        password = '1333254'
+        usr = AppUser(user_name, password)
+        self.assertEqual(usr.user_name, 'abc12345678')
+
 
 if __name__ == '__main__':
     unittest.main()

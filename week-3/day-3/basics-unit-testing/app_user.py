@@ -1,10 +1,10 @@
 
 '''
-    - username should be greater than 8 characters
+    - username should be greater than 8 characters -> throw Exception
     - username should not contain @ character -> throw Exception
-    - username must start from capital letter
-    - password must contain $ and # 
-    - password should be greater than 8 characters 
+    - username must start from capital letter -> throw Exception
+    - password must contain $ and # -> throw Exception
+    - password should be greater than 8 characters -> throw Exception
     - password should not start from digit -> throw Exception
 '''
 
@@ -25,3 +25,6 @@ class AppUser:
         if(len(self.user_name) < 8):
             raise InvalidUserNameException(
                 'Username must be greater than 8 characters')
+        if('@' in self.user_name):
+            raise InvalidUserNameException(
+                'Username should not contain @')
