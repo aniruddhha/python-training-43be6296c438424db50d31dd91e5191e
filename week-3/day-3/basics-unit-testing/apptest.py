@@ -36,6 +36,18 @@ class TestAddition(unittest.TestCase):
         self.assertLess(res, 10)
         self.assertEqual(res, -1)
 
+    def test_num1_less_than_num2(self):
+        num1 = 11
+        num2 = 12
+        res = add(num1, num2)
+        self.assertEqual(res, 23)
+
+    def test_num1_greater_than_num2(self):
+        num1 = 12
+        num2 = 11
+        res = add(num1, num2)
+        self.assertEqual(res, -1)
+
 
 if __name__ == '__main__':
     unittest.main()
