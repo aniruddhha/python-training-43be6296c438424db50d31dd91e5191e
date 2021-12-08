@@ -20,7 +20,7 @@ class UserTest(unittest.TestCase):
             user_name = 'abc'
             password = '1333254'
 
-            user = AppUser(user_name, password)
+            AppUser(user_name, password)
 
 
 if __name__ == '__main__':
