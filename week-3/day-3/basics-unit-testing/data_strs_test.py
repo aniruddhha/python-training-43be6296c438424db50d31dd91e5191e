@@ -13,9 +13,14 @@ class DataStrsTest(unittest.TestCase):
         lst = self.dm.list_of_elements(True, False, True)
         self.assertIsInstance(lst, list)
 
-    def test_check_valid_types(self):
+    def test_check_valid_types_bool(self):
         lst = self.dm.list_of_elements(True, False, True)
         self.assertIsNotNone(lst)
+
+    def test_check_valid_types_int(self):
+        lst = self.dm.list_of_elements(1, 2, 3)
+        self.assertIsNotNone(lst)
+        self.assertIsInstance(lst, list)
 
     def test_check_invalid_types(self):
         lst = self.dm.list_of_elements(
