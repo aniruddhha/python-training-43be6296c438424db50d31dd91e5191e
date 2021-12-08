@@ -14,6 +14,11 @@ class InvalidUserNameException(Exception):
         super().__init__(msg)
 
 
+class InvalidPasswordException(Exception):
+    def __init__(self, msg):
+        super().__init__(msg)
+
+
 class AppUser:
     def __init__(self, user_name: str, password: str):
         self.user_name = user_name
@@ -28,3 +33,9 @@ class AppUser:
         if('@' in self.user_name):
             raise InvalidUserNameException(
                 'Username should not contain @')
+        if(self.user_name[0].islower()):
+            raise InvalidUserNameException(
+                'Username must start from caps letter')
+        if('$' not in self.password and '#' not in self.password):
+            raise InvalidPasswordException(
+                'password should contain $ and #')
