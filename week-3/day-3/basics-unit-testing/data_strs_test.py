@@ -5,19 +5,20 @@ import datetime
 
 class DataStrsTest(unittest.TestCase):
 
+    def setUp(self) -> None:
+        self.dm = DataManipulation()
+
     def test_is_list(self):
-        dm = DataManipulation()
-        lst = dm.list_of_elements(True, False, True)
+
+        lst = self.dm.list_of_elements(True, False, True)
         self.assertIsInstance(lst, list)
 
     def test_check_valid_types(self):
-        dm = DataManipulation()
-        lst = dm.list_of_elements(True, False, True)
+        lst = self.dm.list_of_elements(True, False, True)
         self.assertIsNotNone(lst)
 
     def test_check_invalid_types(self):
-        dm = DataManipulation()
-        lst = dm.list_of_elements(
+        lst = self.dm.list_of_elements(
             datetime.date(2021, 2, 12),
             False,
             True,
@@ -28,8 +29,7 @@ class DataStrsTest(unittest.TestCase):
         self.assertIsNone(lst)
 
     def test_mix_types(self):
-        dm = DataManipulation()
-        lst = dm.list_of_elements(
+        lst = self.dm.list_of_elements(
             False,
             True,
             'abc',
@@ -38,3 +38,6 @@ class DataStrsTest(unittest.TestCase):
         )
         self.assertIsNotNone(lst)
         self.assertIsInstance(lst, list)
+
+    def tearDown(self) -> None:
+        self.dm = None
