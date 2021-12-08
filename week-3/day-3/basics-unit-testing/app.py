@@ -9,5 +9,9 @@
 
 def add(num1: int, num2: int) -> None:
     if num1 > 10 and num2 > 10:
-        return num1 + num2
+        res = num1 + num2
+        if(res < 10):
+            return -3
+        else:
+            return res
     return -1
