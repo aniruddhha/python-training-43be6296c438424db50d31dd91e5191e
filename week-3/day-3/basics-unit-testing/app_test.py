@@ -3,7 +3,7 @@ from unittest import result
 from app import add
 
 
-class TestAddition(unittest.TestCase):
+class AdditionTest(unittest.TestCase):
 
     def test_num_equals_to_ten(self):
         num1 = 10
@@ -27,7 +27,7 @@ class TestAddition(unittest.TestCase):
         num1 = 20
         num2 = 20
         res = add(num1, num2)
-        self.assertGreater(res, 10)
+        self.assertEqual(res, -1)
 
     def test_result_lesss_than_ten(self):
         num1 = 2
@@ -47,6 +47,13 @@ class TestAddition(unittest.TestCase):
         num2 = 11
         res = add(num1, num2)
         self.assertEqual(res, -1)
+
+    def test_num1_num2_zero(self):
+        num1 = 0
+        num2 = 0
+
+        res = add(num1, num2)
+        self.assertEqual(res, -4)
 
 
 if __name__ == '__main__':
