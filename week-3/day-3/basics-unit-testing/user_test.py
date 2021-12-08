@@ -16,11 +16,11 @@ class UserTest(unittest.TestCase):
         self.assertEqual(user.user_name, 'abcdefghijklmn')
 
     def test_invalid_user_name_length(self):
-        user_name = 'abc'
-        password = '1333254'
+        with self.assertRaises(InvalidUserNameException):
+            user_name = 'abc'
+            password = '1333254'
 
-        user = AppUser(user_name, password)
-        # self.assertRaises(InvalidUserNameException)
+            user = AppUser(user_name, password)
 
 
 if __name__ == '__main__':
