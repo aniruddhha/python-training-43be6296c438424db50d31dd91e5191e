@@ -9,7 +9,14 @@
 class DataManipulation:
 
     def list_of_elements(self, *args):
-        return [*args]
+        valid_types = [str, bool, int, float]
+
+        lst = [*args]
+        for itm in lst:
+            if type(itm) not in valid_types:
+                return None
+
+        return lst
 
     def square_each_tuple(self): pass
     def add_new_element_tuple(self): pass
