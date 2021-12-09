@@ -4,7 +4,6 @@
 '''
 
 from flask import Flask, request
-from flask.signals import request_started
 
 from flask_restful import Resource, Api
 
@@ -16,7 +15,7 @@ class Hello(Resource):
     def get(self):
         return {
             'os': 'android',
-            'version': '11',
+            'version': 11,
             'name':  'not-named'
         }
 

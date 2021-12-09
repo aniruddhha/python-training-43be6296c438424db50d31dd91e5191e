@@ -15,7 +15,7 @@ class HelloResourceTest(unittest.TestCase):
         response = self.client.get('/hello')
         expected = {
             'os': 'android',
-            'version': '11',
+            'version': 11,
             'name':  'not-named'
         }
         self.assertEqual(response.status_code, 200)
@@ -24,7 +24,7 @@ class HelloResourceTest(unittest.TestCase):
     def test_post_basic(self):
         obj = {
             'os': 'android',
-            'version': '11',
+            'version': 11,
             'name':  'not-named',
             'date': '2021-01-01'
         }
