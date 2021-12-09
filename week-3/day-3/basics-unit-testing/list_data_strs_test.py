@@ -3,7 +3,7 @@ from data_structures import DataManipulation
 import datetime
 
 
-class DataStrsTest(unittest.TestCase):
+class ListDataStrsTest(unittest.TestCase):
 
     def setUp(self) -> None:
         self.dm = DataManipulation()
