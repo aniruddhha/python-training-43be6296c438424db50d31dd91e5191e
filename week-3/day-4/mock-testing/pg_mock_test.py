@@ -23,6 +23,6 @@ mck_pg.balance.assert_called_with(133)
 # mck_pg.balance.assert_called_with(145)
 
 print(f'Balance Arguments {mck_pg.balance.call_args}')
-print(f'Balance Count mck_pg.balance.call_count')
+print(f'Balance Count {mck_pg.balance.call_count}')
 print('---Method Calls On Mock Object---')
 print(mck_pg.method_calls)
