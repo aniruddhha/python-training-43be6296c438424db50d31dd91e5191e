@@ -54,3 +54,15 @@ class MobileResourceTest(unittest.TestCase):
         response = self.client.post('/mobile', json=obj)
         expected_status = 400
         self.assertEqual(response.status_code, expected_status)
+
+    def test_unique_mobile_numbers(self):
+        obj = ('1234567890', '3216549870')
+        response = self.client.post('/mobile', json=obj)
+        expected_status = 201
+        self.assertEqual(response.status_code, expected_status)
+
+    def test_duplicate_mobile_numbers(self):
+        obj = ('1234567890', '3216549870', '1234567890')
+        response = self.client.post('/mobile', json=obj)
+        expected_status = 400
+        self.assertEqual(response.status_code, expected_status)

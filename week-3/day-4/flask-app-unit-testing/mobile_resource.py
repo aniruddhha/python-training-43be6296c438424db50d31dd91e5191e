@@ -13,6 +13,12 @@ class Mobile(Resource):
                 'msg': 'you must supply mobiles in list format []'
             }, 400
 
+        if(len(obj) != len(set(obj))):
+            return {
+                'sts': 'fail',
+                'msg': 'unique mobiles are required'
+            }, 400
+
         for mb in obj:
             if(len(mb) != 10):
                 return {
