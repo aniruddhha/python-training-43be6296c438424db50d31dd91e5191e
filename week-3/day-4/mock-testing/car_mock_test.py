@@ -1,7 +1,10 @@
-from unittest.mock import MagicMock
-from car import Car
+from unittest.mock import Mock
 
-cr: Car = Car()
 
-cr.speed_up = MagicMock(abc=2)
-cr.speed_up()
+car = Mock()
+
+car.speed_up()
+car.speed_up.assert_called()
+car.speed_up.assert_called_once()
+car.speed_up()
+car.speed_up.assert_called_once()

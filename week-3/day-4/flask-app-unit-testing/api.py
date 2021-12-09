@@ -2,7 +2,8 @@
     - ✅ post the json with os, version, name and date key
     - ✅ date must be less that today -> throw custom exception InvalidDateException
     - ✅ accept list of mobile numbers, each mobile number should be having length exactly 10 digits only
-    - ❌ above list should not contain duplicate number
+    - ✅ above list should not contain duplicate number
+    - ❌
 '''
 
 from flask import Flask
