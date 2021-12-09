@@ -21,6 +21,24 @@ class HelloResourceTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertDictEqual(response.get_json(), expected)
 
+    def test_post_basic(self):
+        obj = {
+            'os': 'android',
+            'version': '11',
+            'name':  'not-named',
+            'date': '2021-01-01'
+        }
+
+        expected = {
+            'sts': 'success',
+            'msg': 'os created successfully',
+            'res': obj
+        }
+
+        response = self.client.post('/hello', json=obj)
+        self.assertEqual(response.status_code, 201)
+        self.assertDictEqual(response.get_json(), expected)
+
     def tearDown(self) -> None:
         pass
 

@@ -1,4 +1,10 @@
-from flask import Flask
+'''
+    - post the json with os, version, name and date key
+    - date must be less that today -> throw custom exception InvalidDateException
+'''
+
+from flask import Flask, request
+from flask.signals import request_started
 
 from flask_restful import Resource, Api
 
@@ -13,6 +19,14 @@ class Hello(Resource):
             'version': '11',
             'name':  'not-named'
         }
+
+    def post(self):
+        obj = request.get_json()
+        return {
+            'sts': 'success',
+            'msg': 'os created successfully',
+            'res': obj
+        }, 201
 
 
 api.add_resource(Hello, '/hello')
