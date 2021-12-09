@@ -1,4 +1,5 @@
 
+from typing import List
 from flask import Flask, request
 from flask_restful import Resource
 
@@ -11,7 +12,20 @@ class Mobile(Resource):
                 'sts': 'fail',
                 'msg': 'you must supply mobiles in list format []'
             }, 400
+
+        for mb in obj:
+            if(len(mb) != 10):
+                return {
+                    'sts': 'fail',
+                    'msg': f'mobile {mb} is not 10 digit long',
+                }, 400
+            if(any(not ch.isdigit() for ch in mb)):
+                return {
+                    'sts': 'fail',
+                    'msg': f'mobile {mb} is not a mobile number',
+                }, 400
         return {
-            'sts': 'wip',
-            'msg': 'imcomplete api',
+            'sts': 'success',
+            'msg': 'added mobile successfully',
+            'res': obj
         }, 201
