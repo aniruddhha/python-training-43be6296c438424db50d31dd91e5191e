@@ -1,7 +1,7 @@
 
 -- if you want add constraints at the time of table creation; add it right inside create query
 create table `person` (
-	`adhar_id` varchar(10),
+	`adhar_id` varchar(20),
     `official_name` varchar(10) default 'abc',
     `dob` date,
     `is_indian` boolean default true,
