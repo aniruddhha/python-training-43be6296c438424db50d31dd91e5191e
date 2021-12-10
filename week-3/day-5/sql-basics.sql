@@ -8,7 +8,11 @@ use `iotdb`;
 
 -- use `erpdb`;
 
-
-
-
 -- drop database `iotdb`;
+
+create table `student` (
+	-- <column-name> space <datatype>
+
+	`roll_number` int,
+    `name` varchar(10)
+); 
