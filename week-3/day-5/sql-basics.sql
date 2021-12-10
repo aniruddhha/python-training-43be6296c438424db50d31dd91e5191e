@@ -16,3 +16,5 @@ create table `student` (
 	`roll_number` int,
     `name` varchar(10)
 ); 
+
+-- store the information of shop, which has shop_act_num, shop_name, address, road , phone 
