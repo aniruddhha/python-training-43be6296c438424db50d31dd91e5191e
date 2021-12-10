@@ -4,7 +4,8 @@ create table `person` (
 	`adhar_id` varchar(10),
     `official_name` varchar(10) default 'abc',
     `dob` date,
-    `is_indian` boolean default true
+    `is_indian` boolean default true,
+    `salary` int
 );
 
 drop table `person`;
