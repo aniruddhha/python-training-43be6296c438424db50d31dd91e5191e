@@ -22,5 +22,17 @@ select * from `person` where `dob` > '2018-04-12';
 -- how many employees are there who born after 12 april 2018
 select count(*) from `person` where `dob` > '2018-04-12';
 
--- how employees are there who age is between 20 to 60
+-- what is current date
+select curdate();
+
+-- how to calculate date difference
+select TIMESTAMPDIFF(YEAR, '1970-02-01', CURDATE());
+
+-- print age of all employees
+select `official_name` as `Name` , TIMESTAMPDIFF(YEAR, `dob`, CURDATE()) as `Age` from `person`; 
+
+-- how many employees are there whose age is between 20 to 60
+select count(*) from `person` where TIMESTAMPDIFF(YEAR, `dob`, CURDATE()) between 5 and 60; 
+
+
 
