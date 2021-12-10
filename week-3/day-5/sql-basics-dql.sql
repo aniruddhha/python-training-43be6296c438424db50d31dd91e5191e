@@ -34,5 +34,11 @@ select `official_name` as `Name` , TIMESTAMPDIFF(YEAR, `dob`, CURDATE()) as `Age
 -- how many employees are there whose age is between 20 to 60
 select count(*) from `person` where TIMESTAMPDIFF(YEAR, `dob`, CURDATE()) between 5 and 60; 
 
+-- between
+select 1000 between 5 and 100;
+
+-- here 1 represents truth
+select * from `person` where 1; 
+
 
 
