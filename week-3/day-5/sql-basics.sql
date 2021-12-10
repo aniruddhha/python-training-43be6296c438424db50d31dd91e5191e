@@ -31,3 +31,8 @@ show tables;
 
 drop table `shop`; -- different meaning
 truncate table `shop`; -- different meaning
+
+alter table `shop` drop column `is_on_road`; 
+alter table `shop` add column `toll` int; 
+
+desc `shop`;
