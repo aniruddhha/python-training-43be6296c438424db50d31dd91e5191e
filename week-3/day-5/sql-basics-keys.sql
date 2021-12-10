@@ -19,3 +19,4 @@ select * from `person`;
 
 insert into `person`(`adhar_id`, `dob`) values('12345', '2021-01-01');
 insert into `person` values('145263', 'pqr', '2021-01-01', false);
+insert into `person` values('145273', 'pqr', null, false);
