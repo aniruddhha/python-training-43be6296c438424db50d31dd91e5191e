@@ -42,6 +42,49 @@ alter table `account_transactions` add constraint primary key (`txn_id`);
 alter table `account_transactions` add constraint foreign key (`src_ac`) references `bank_account` (`ac_num`);
 
 
+-- create account
+insert into `bank_account` values('1234567890123', 'abc', false);
+insert into `bank_account` values('9685123455781', 'pqr', false);
+-- activate the account
+
+-- activating/deactivating the account
+update `bank_account`
+set `ac_sts` = true -- for deactivating make it false
+where `ac_num` = '1234567890123';
+
+update `bank_account` 
+set `ac_sts` = true
+where `ac_num` = '9685123455781';
+
+-- money transfer
+
+delete from `account_transactions` ;
+
+insert into `account_details` 
+values(1, 3000, 1234567890123);
+
+insert into `account_transactions` 
+values (12345, '2021-01-01', 1, 3000, '1234567890123' );
+
+insert into `account_details` 
+values(2, 5000, '9685123455781');
+
+insert into `account_transactions` 
+values (78945, '2021-01-01', 1, 5000, '9685123455781' );
+
+
+update `account_details` 
+set `ac_amt` = 4000 -- 3000 balance
+where `src_ac` = '1234567890123';
+
+update `account_details` 
+set `ac_amt` = 4000 -- 5000 balance
+where `src_ac` = '9685123455781';
+
+select * from `account_details` ;
+
+
+
 
 
 
