@@ -34,6 +34,7 @@ inner join `account_details` `ad`
 on `ba`.`ac_num` = `ad`.`src_ac`
 where `ad`.`ac_amt` > 2000;
 
+-- left outer
 
 select * 
 from `bank_account` `ba`
@@ -45,3 +46,13 @@ from `account_details` `ad`
 left join `bank_account` `ba`
 on `ba`.`ac_num` = `ad`.`src_ac`;
 
+-- right outer
+select * 
+from `bank_account` `ba`
+right join `account_details` `ad`
+on `ba`.`ac_num` = `ad`.`src_ac`;
+
+select * 
+from `account_details` `ad`
+right join `bank_account` `ba`
+on `ba`.`ac_num` = `ad`.`src_ac`;
