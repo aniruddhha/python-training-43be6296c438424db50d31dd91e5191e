@@ -132,3 +132,8 @@ group by `country`, `salary` -- grouping
 having `salary` > 50000
 order by `salary` desc;
 
+select *
+from `person`
+order by `dob`
+limit 2
+
