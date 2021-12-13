@@ -1,0 +1,15 @@
+drop trigger `ac_dtl_txn_trigger`;
+
+delimiter $$
+create trigger `ac_dtl_txn_trigger` 
+after insert on `account_details` for each row 
+begin
+	declare dt date;
+    declare last_txn_id integer;
+    
+    set @dt := (select curdate());
+    set @last_txn_id = (select `txn_id` from `account_transactions` limit 1);
+    
+	insert into `account_transactions` values(@last_txn_id, @dt, 2, NEW.`ac_amt`, NEW.`src_ac`);
+end $$
+
