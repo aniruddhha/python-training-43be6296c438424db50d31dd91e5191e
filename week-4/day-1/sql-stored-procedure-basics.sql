@@ -10,4 +10,4 @@ create procedure `show_me_date`()
 
 delimiter ;
 
-call show_me_date();
+call `show_me_date`();
