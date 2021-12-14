@@ -1,0 +1,28 @@
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+.box2 {
+    width: 25vw;
+    height: 25vh;
+    background-color: rgb(145, 140, 210)
+}
+
+.wrapper {
+    font-size: 1em;
+  }
+  
+  .px {
+    width: 200px;
+  }
+  
+  .vw {
+    width: 10vw;
+  }
+  
+  .em {
+    width: 10em;
+  }
+      
