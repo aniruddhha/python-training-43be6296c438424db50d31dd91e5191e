@@ -1,3 +1,6 @@
+
+create database `assgnment-db`;
+use `assgnment-db`;
 -- assignment sql ---
 -- This is databas schema along with sample data --
 -- by considering this schema, try to write queries accordingly --
