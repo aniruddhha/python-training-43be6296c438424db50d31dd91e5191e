@@ -1,0 +1,14 @@
+.parent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap : wrap;
+}
+
+.box {
+    width: 10vw;
+    height: 10vw;
+    background-color: aqua;
+    margin: 8px;
+    border: 1px solid red;
+}
+
