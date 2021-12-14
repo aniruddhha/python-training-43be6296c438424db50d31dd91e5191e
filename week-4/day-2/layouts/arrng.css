@@ -1,0 +1,22 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.parent {
+    display: flex;
+    flex-wrap : wrap;
+    border: 1px solid red;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box {
+    width: 10vw;
+    height: 10vw;
+    background-color: aqua;
+    margin: 8px;
+    border: 1px solid red;
+}
+
