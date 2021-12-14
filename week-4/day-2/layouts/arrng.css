@@ -20,3 +20,14 @@ body {
     border: 1px solid red;
 }
 
+.parent > div:nth-child(2) {
+    display: flex;
+    align-self: flex-end;
+}
+
+
+.parent > div:nth-child(4) {
+    display: flex;
+    align-self: flex-start;
+}
+
