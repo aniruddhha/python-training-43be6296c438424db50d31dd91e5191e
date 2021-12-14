@@ -3,3 +3,7 @@
     height: 10vw;
     background-color: cadetblue;
 }
+.dvHvr:hover {
+    background-color: cadetblue;
+    box-shadow: 5px 10px #888888;
+}
