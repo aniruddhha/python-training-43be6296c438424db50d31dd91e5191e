@@ -1,3 +1,8 @@
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
 .box1 {
     width: 100px;
     height: 100px;
@@ -12,17 +17,23 @@
 
 .wrapper {
     font-size: 1em;
-  }
+}
   
-  .px {
-    width: 200px;
-  }
+.px {
+  width: 200px;
+}
   
-  .vw {
-    width: 10vw;
-  }
+.vw {
+  width: 10vw;
+}
   
-  .em {
-    width: 10em;
-  }
+.em {
+  width: 10em;
+}
+
+.box3 {
+  width : 25%;
+  height: 25%;
+  background-color: cadetblue;
+}
       
