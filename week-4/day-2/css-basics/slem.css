@@ -1,0 +1,21 @@
+
+div {
+    height: 150px;
+    border: 1px solid gray;
+}
+
+body > :nth-child(2) {
+    background-color: aqua;
+}
+
+body > :last-child {
+    background-color: rebeccapurple;
+}
+
+.dvFst > input[type=text] {
+    /* border: 1px solid red; */
+}
+
+.dvFst > #ip {
+    
+}
