@@ -10,6 +10,18 @@ body {
     align-items: center;
 }
 
+@media screen and (max-width : 350px){
+    .container {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 3px;
+    }
+}
+
 @media screen and (min-width : 350px){
     .container {
         width: 100%;
