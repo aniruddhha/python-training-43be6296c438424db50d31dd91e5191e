@@ -9,12 +9,13 @@ body {
     display: grid;
     /* grid-template-columns: 200px 200px 200px; */
     grid-template-columns: 3fr 1fr 1fr;
-    gap: 5px    ;
     
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));     */
+    gap: 5px;
+    /* grid-template-rows: 20; */
+    grid-auto-rows: minmax(10%, auto)
 }
 
 .back {
     background-color: aquamarine;
-    height: 10%;
-    
 }
