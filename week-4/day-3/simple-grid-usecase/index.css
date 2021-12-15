@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-auto-rows: minmax(20%, auto); */
-    grid-template-rows: 4fr 3fr 6fr;
+    grid-template-rows: 4fr 4fr 6fr;
     
     grid-template-areas: 
     "main main main main"
@@ -21,11 +21,25 @@ body {
 .main {
     grid-area: main;
     background-color: cadetblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info1 {
     grid-area: info1;
     background-color: burlywood;
+    display: flex;
+}
+
+.info1 > div:first-child {
+    width: 70%;
+    background-color: aliceblue;
+}
+
+.info1 > div:last-child {
+    width: 30%;
 }
 
 .info2 {
