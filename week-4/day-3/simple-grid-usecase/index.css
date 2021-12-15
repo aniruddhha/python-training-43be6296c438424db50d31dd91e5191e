@@ -1,0 +1,42 @@
+body {
+    width: 95vw;
+    height: 95vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-auto-rows: minmax(20%, auto); */
+    grid-template-rows: 4fr 3fr 6fr;
+    
+    grid-template-areas: 
+    "main main main main"
+    "info1 info1 info2 info2"
+    "details details details side" 
+    ;
+}
+
+.main {
+    grid-area: main;
+    background-color: cadetblue;
+}
+
+.info1 {
+    grid-area: info1;
+    background-color: burlywood;
+}
+
+.info2 {
+    grid-area: info2;
+    background-color: aquamarine;
+}
+.details {
+    grid-area: details;
+    background-color: brown;
+}
+.side {
+    grid-area: side;
+    background-color: cornflowerblue;
+}
