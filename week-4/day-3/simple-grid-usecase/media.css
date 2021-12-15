@@ -1,0 +1,37 @@
+@media screen and (min-width : 300px){
+    .pc-checker {
+        display: none;
+    }
+    .mb-checker {
+        display: block;
+    }
+    .ipad-checker {
+        display: none;
+    }
+}
+
+@media screen and (min-width : 800px){
+    .pc-checker {
+        display: none;
+    }
+    .mb-checker {
+        display: none;
+    }
+    .ipad-checker {
+        display: block;
+    }
+}
+
+@media screen and (min-width : 1024px) {
+    .pc-checker {
+        display: block;
+    }
+    .mb-checker {
+        display: none;
+
+    }
+    .ipad-checker {
+        display: none;
+    }
+}
+
