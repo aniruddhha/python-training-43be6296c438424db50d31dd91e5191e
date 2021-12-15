@@ -24,6 +24,9 @@ body {
     flex-basis : 20%;
     border: 1px solid red;
     display: flex;
+    align-items: flex-end;
+
+    height: 100%;
 }
 
 .round {
@@ -33,4 +36,12 @@ body {
     text-align: center;
     display: flex;
     border: 1px solid red;
+}
+
+.cnt-ev {
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1vh;
 }
