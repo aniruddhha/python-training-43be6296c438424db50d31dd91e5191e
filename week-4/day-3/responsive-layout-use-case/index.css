@@ -15,9 +15,7 @@ nav {
 .info {
     margin-top: 1em;
     grid-area : info;
-
     display: flex;
-    flex-wrap: wrap;
 }
 
 .info > .info1 {
@@ -38,35 +36,6 @@ footer {
     grid-area: footer;
 }
 
-
-
-@media screen and (max-width : 350px){
-    .container {
-        width: 100%;
-        height: 100%;
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-        gap: 3px;
-    }
-}
-
-@media screen and (min-width : 350px){
-    .container {
-        width: 100%;
-        height: 100%;
-    
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "nav"
-        "m1"
-        "info"
-        "footer"
-        ;
-    }
-}
 
 @media screen and (min-width : 800px){
     .container {
