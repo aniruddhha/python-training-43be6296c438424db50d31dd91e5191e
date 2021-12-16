@@ -15,6 +15,12 @@ if (true) {
     console.log(abc)
 }
 
+var dt = 20
+if (true) {
+    var dt = 20
+}
+console.log(dt)
+
 
 console.log(cnt)
 console.log(abc)
