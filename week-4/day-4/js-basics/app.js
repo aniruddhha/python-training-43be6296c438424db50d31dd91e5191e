@@ -1,4 +1,22 @@
-var nm = 'android'
-var ver = 12
+
+//ECMAScript
+var nm = 'android' // value can be changed
+let ver = 12 //  value can be changed but in a scope
+const os = 'Froyo' // constant in scope
+// os = 'kkk'
 
 console.log('os is ' + nm + ' version is ' + ver)
+
+let cnt = 10
+if (true) {
+    let cnt = 20
+    let abc = 'hi'
+
+    console.log(abc)
+}
+
+
+console.log(cnt)
+console.log(abc)
+
+
