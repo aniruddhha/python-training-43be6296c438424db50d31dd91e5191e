@@ -1,0 +1,49 @@
+body {
+    width: 98vw;
+    height: 100vh;
+}
+.calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.result, .inps, .btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    height: 10%;
+    background-color: aliceblue;
+    font-size: 3em;
+}
+.inps {
+    height: 20%;
+    justify-content: space-around;
+}
+
+.inps > input {
+    width: 100%;
+    height: 25%;
+    font-size: 2em;
+    border-radius: 5%;
+    margin: 8px;
+}
+.btns {
+    height: 20%;
+    justify-content: space-around;
+}
+
+.btns > input {
+    width: 25%;
+    height: 25%;
+    font-size: 2em;
+    margin: 8px;
+}

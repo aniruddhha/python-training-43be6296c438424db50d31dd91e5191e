@@ -28,9 +28,11 @@ blue.onclick = function () {
 const show = document.getElementById('showBtn')
 show.onclick = function () {
     ttl.style.display = 'block'
+    isTtlVisible = true
 }
 const hide = document.getElementById('hideBtn')
 hide.onclick = function () {
     ttl.style.display = 'none'
+    isTtlVisible = false
 }
 
