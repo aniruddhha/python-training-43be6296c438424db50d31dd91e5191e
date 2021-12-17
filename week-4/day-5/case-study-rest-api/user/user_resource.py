@@ -46,15 +46,15 @@ class UserResource(Resource):
         except InvalidUserNameException as ex:
             return {
                 'sts': 'fail',
-                'msg': ex.__str__()
+                'msg': ex.msg
             }, 400
         except InvalidPasswordException as ex:
             return {
                 'sts': 'fail',
-                'msg': ex.__str__()
+                'msg': ex.msg
             }, 400
         except InvalidRoleException as ex:
             return {
                 'sts': 'fail',
-                'msg': ex.__str__()
+                'msg': ex.msg
             }, 400
