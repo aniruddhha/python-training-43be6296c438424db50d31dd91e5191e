@@ -1,7 +1,9 @@
 from flask import Flask, request
 from flask_restful import Resource, Api, reqparse  # new -> rest api
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # ---> new line -> we have enabled the cors headers
 
 api = Api(app)  # new -> rest api
 
@@ -36,13 +38,6 @@ class ByeBye(Resource):
             'sts': 'checking',
             'msg': 'checking flask restful extention',
             'res': f'Bye Bye is {bye_id}'
-        }
-
-    def get(self):
-        return {
-            'sts': 'checking',
-            'msg': 'checking flask restful extention',
-            'res': 'Only Bye'
         }
 
 
