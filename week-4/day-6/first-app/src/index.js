@@ -4,6 +4,7 @@ import './index.css'
 
 import First from './first';
 import Second from './second';
+import Third from './third'
 
 
 // react gives you much more elegant way
@@ -11,4 +12,4 @@ import Second from './second';
 
 
 // ReactDOM.render(First(), root);
-ReactDOM.render(<Second />, document.getElementById('root'))
+ReactDOM.render(<Third />, document.getElementById('root'))

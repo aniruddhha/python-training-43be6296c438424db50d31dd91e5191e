@@ -1,0 +1,26 @@
+.colCont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.colorPanel {
+    flex-basis: 1;
+    width: 100%;
+    height: 30%;
+    border: 1px solid rgb(255,0,166);
+}
+
+.red, .green, .blue {
+    width: 100%;
+    flex-basis: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+progress {
+    width: 70%;
+}
+
