@@ -2,21 +2,19 @@ import './second.css'
 
 export default function Second() {
 
-    function onClickOkay() {
-        console.log(`hello`)
-    }
+    let msg = 'hello welcome to react'
 
     const onBtClk = () => {
-        console.log(`hello seperate arrow`)
+        msg = 'great react'
+        console.log(msg)
     }
 
     return (
         <div>
-            <div className='box'>
+            <div>
+                <h1>{msg}</h1>
             </div>
             <div>
-                <input type='button' value='Okay' onClick={onClickOkay} />
-                <input type='button' value='Okay' onClick={() => console.log('hello arrow')} />
                 <input type='button' value='Okay' onClick={onBtClk} />
             </div>
         </div>
