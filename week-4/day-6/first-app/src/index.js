@@ -10,7 +10,5 @@ import Second from './second';
 // i.e. create components
 
 
-const root = document.getElementById('root')
-
 // ReactDOM.render(First(), root);
-ReactDOM.render(<First />, root)
+ReactDOM.render(<Second />, document.getElementById('root'))
