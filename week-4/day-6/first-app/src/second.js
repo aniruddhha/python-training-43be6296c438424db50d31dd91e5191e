@@ -1,12 +1,16 @@
 import './second.css'
+import { useState } from 'react' // react hook
+
+// state management 
 
 export default function Second() {
 
-    let msg = 'hello welcome to react'
+    const [msg, setMsg] = useState('hello welcome to react')
 
     const onBtClk = () => {
-        msg = 'great react'
+        // msg = 'great react'
         console.log(msg)
+        setMsg('great react')
     }
 
     return (
