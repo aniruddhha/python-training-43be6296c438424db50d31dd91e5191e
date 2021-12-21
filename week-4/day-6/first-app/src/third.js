@@ -40,17 +40,17 @@ function Third() {
             </div>
             <div className='red'>
                 <input type='button' value='-' onClick={onClickRedSub} />
-                <progress value={red} max={maxColor} ></progress>
+                Red <progress value={red} max={maxColor} ></progress> <strong>{red}</strong>
                 <input type='button' value='+' onClick={onClickRedAdd} />
             </div>
             <div className='green'>
                 <input type='button' value='-' onClick={onClickGreenSub} />
-                <progress value={green} max={maxColor}></progress>
+                Green <progress value={green} max={maxColor}></progress> <strong>{green}</strong>
                 <input type='button' value='+' onClick={onClickGreenAdd} />
             </div>
             <div className='blue'>
                 <input type='button' value='-' onClick={onClickBlueSub} />
-                <progress value={blue} max={maxColor}></progress>
+                Blue <progress value={blue} max={maxColor}></progress> <strong>{blue}</strong>
                 <input type='button' value='+' onClick={onClickBlueAdd} />
             </div>
         </div>
