@@ -14,6 +14,7 @@ import { UserLogin } from './user/login'
 import { Dashboard } from './dashboard/dashboard';
 import { Accounts } from './account/accounts';
 import { AppMenu } from './dashboard/menus';
+import { NotActivated } from './account/not-activated';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,6 +26,7 @@ const router = (
       <Route path="dash" element={<Dashboard />}>
         <Route path="" element={<AppMenu />} />
         <Route path="accounts" element={<Accounts />} />
+        <Route path="notactivated" element={<NotActivated />} />
       </Route>
     </Routes>
   </BrowserRouter>
