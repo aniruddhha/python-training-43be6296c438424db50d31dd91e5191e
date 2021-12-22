@@ -1,29 +1,27 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useCallback } from 'react';
 
 export function Accounts() {
 
-    const data = [
-        { sr: 1, acNm: 'abc', acNum: '12348789660', bal: 5000, sts: true },
-        { sr: 2, acNm: 'pqr', acNum: '87358362349', bal: 15000, sts: false },
-        { sr: 3, acNm: 'lmn', acNum: '65789334546', bal: 95000, sts: true },
-        { sr: 4, acNm: 'xyz', acNum: '95948654857', bal: 15000, sts: true },
-        { sr: 5, acNm: 'bhy', acNum: '16549865465', bal: 7000, sts: false },
-    ]
+    const [accounts, setAccounts] = useState([])
 
-    const [accounts, setAccounts] = useState(data)
+    useEffect(() => {
+        fetch('http://localhost:5000/user')
+            .then(res => res.json())
+            .then(data => {
+                setAccounts(data.res)
+            })
+            .catch(err => console.log(err))
+    }, []) // it will call at the time of loading component only 
 
-    useEffect(() => { }, [])
-
-    const rows = accounts.map(ac => {
+    const rows = accounts.map((ac, index) => {
         return (
-            <tr>
-                <td >{ac.sr}</td>
-                <td>{ac.acNm}</td>
-                <td>{ac.acNum}</td>
-                <td>{ac.bal}</td>
-                <td>{ac.sts ? 'active' : 'inactive'}</td>
+            <tr key={index}>
+                <td >{index + 1}</td>
+                <td>{ac.user_id}</td>
+                <td>{ac.user_name}</td>
+                <td>{ac.password}</td>
+                <td>{ac.role}</td>
             </tr>
         )
     })
@@ -42,10 +40,10 @@ export function Accounts() {
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Id</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Account #</th>
-                                <th scope="col">Balance</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Role</th>
                             </tr>
                         </thead>
                         <tbody>

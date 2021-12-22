@@ -103,7 +103,7 @@ export function UserRegistration() {
 
                 <button type="submit" className="btn btn-primary">Regsiter</button>
             </form>
-            {isRegisterSuccess ? 'success' : 'fail'}
+
             <div>
                 <img src={banner}></img>
             </div>
