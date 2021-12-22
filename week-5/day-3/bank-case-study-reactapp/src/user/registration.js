@@ -1,12 +1,13 @@
 import react from 'react'
 import './registration.css'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 
 import banner from '../images/reg-banner.jpg'
 
 export function UserRegistration() {
 
     const [formData, setFormData] = useState()
+    const [isRegisterSuccess, setRegisterSuccess] = useState(false)
 
     const onUserNameChanged = ev => setFormData({ ...formData, userName: ev.target.value })
     const onEmailChanged = ev => setFormData({ ...formData, email: ev.target.value })
@@ -18,7 +19,7 @@ export function UserRegistration() {
         console.log('form submitted')
         console.log(formData)
 
-        fetch('http://localhost:5000/abc', formData)
+        makePostRequest()
     }
 
     const validateEmail = (email) => {
@@ -28,6 +29,27 @@ export function UserRegistration() {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             )
     };
+
+    const makePostRequest = useCallback(() => {
+
+        const obj = {
+            user_id: 134688,
+            user_name: '123456789',
+            password: '123456789',
+            role: 'admin'
+        }
+
+        setRegisterSuccess(false)
+        fetch('http://localhost:5000/user', obj)
+            .then(dt => {
+                setRegisterSuccess(true)
+                console.log(dt)
+            })
+            .catch(err => {
+                setRegisterSuccess(false)
+                console.log(err)
+            })
+    }, [isRegisterSuccess])
 
     return (
         <div className="container d-flex flex-row-reverse align-items-center">
@@ -78,8 +100,10 @@ export function UserRegistration() {
                     />
                     <label htmlFor="form-check-label">Check me out</label>
                 </div>
+
                 <button type="submit" className="btn btn-primary">Regsiter</button>
             </form>
+            {isRegisterSuccess ? 'success' : 'fail'}
             <div>
                 <img src={banner}></img>
             </div>
