@@ -2,6 +2,8 @@ import react from 'react'
 import './registration.css'
 import { useState } from 'react'
 
+import banner from '../images/reg-banner.jpg'
+
 export function UserRegistration() {
 
     const [formData, setFormData] = useState()
@@ -28,8 +30,11 @@ export function UserRegistration() {
     };
 
     return (
-        <div className="container d-flex flex-row-reverse">
+        <div className="container d-flex flex-row-reverse align-items-center">
             <form onSubmit={onFormSubmit}>
+                <div className="mb-3">
+                    <h2 className="text-muted"> User Registration </h2>
+                </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label" >User Name</label>
                     <input
@@ -75,6 +80,9 @@ export function UserRegistration() {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+            <div>
+                <img src={banner}></img>
+            </div>
         </div>
     )
 }
