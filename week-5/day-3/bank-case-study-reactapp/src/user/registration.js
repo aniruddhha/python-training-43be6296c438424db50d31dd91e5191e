@@ -78,7 +78,7 @@ export function UserRegistration() {
                     />
                     <label htmlFor="form-check-label">Check me out</label>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Regsiter</button>
             </form>
             <div>
                 <img src={banner}></img>

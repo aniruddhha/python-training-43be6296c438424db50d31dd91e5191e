@@ -50,7 +50,7 @@ export function UserLogin() {
                     {formData && !formData.password && <div className="form-text text-danger">Password required</div>}
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Login</button>
             </form>
             <div>
                 <img src={banner}></img>
