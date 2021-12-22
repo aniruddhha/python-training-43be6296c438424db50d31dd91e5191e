@@ -12,6 +12,8 @@ import {
 import { UserRegistration } from './user/registration'
 import { UserLogin } from './user/login'
 import { Dashboard } from './dashboard/dashboard';
+import { Accounts } from './account/accounts';
+import { AppMenu } from './dashboard/menus';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,7 +22,10 @@ const router = (
     <Routes>
       <Route path="/" element={<UserLogin />}></Route>
       <Route path="reg" element={<UserRegistration />}></Route>
-      <Route path="dash" element={<Dashboard />}></Route>
+      <Route path="dash" element={<Dashboard />}>
+        <Route path="" element={<AppMenu />} />
+        <Route path="accounts" element={<Accounts />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 )

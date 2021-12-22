@@ -1,12 +1,15 @@
 import react from 'react'
 import './registration.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 import banner from '../images/reg-banner.jpg'
 
 export function UserLogin() {
 
     const [formData, setFormData] = useState()
+
+    const navigate = useNavigate()
 
     const onUserNameChanged = ev => setFormData({ ...formData, userName: ev.target.value })
     const onPasswordChanged = ev => setFormData({ ...formData, password: ev.target.value })
@@ -16,7 +19,8 @@ export function UserLogin() {
         console.log('form submitted')
         console.log(formData)
 
-        fetch('http://localhost:5000/abc', formData)
+        
+        navigate('/dash')
     }
 
     return (
