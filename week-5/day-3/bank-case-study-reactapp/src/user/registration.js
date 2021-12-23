@@ -79,7 +79,7 @@ export function UserRegistration() {
                         aria-describedby="emailHelp"
                         required
                     />
-                    {formData && !formData.email && !validateEmail(formData.email) && <div className="form-text text-danger">Email Is Required</div>}
+                    {formData && !formData.email && <div className="form-text text-danger">Email Is Required</div>}
                     {formData && (formData.email && !validateEmail(formData.email)) && <div className="form-text text-danger">Invalid Email</div>}
                 </div>
                 <div className="mb-3">

@@ -19,7 +19,12 @@ export function UserLogin() {
         console.log('form submitted')
         console.log(formData)
 
-        
+        // - here you need to make post call
+        // - response should return user object with role, userId and other required data
+        // - you need to store user object in local storage (you need to make little research)
+        //   so that, you can retrieve user object from local storage as required through out the app
+        // - on the success of fetch call, you need to navigate dashboard
+
         navigate('/dash')
     }
 
