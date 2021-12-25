@@ -4,6 +4,7 @@
  
   vars:
     home_dir : /home/aniruddha/abc
+    
   tasks:
  
   - name: Create the Directory
