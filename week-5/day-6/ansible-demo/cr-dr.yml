@@ -1,0 +1,14 @@
+---
+- name: Playbook Managing Directories
+  hosts: 127.0.0.1
+ 
+  vars:
+    home_dir : /home/aniruddha/abc
+  tasks:
+ 
+  - name: Create the Directory
+    shell: mkdir {{home_dir}}
+
+  - name: Create new file in dir
+    shell: touch {{home_dir}}/my.txt
+  

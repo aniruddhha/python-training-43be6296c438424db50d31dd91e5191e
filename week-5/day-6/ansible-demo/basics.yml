@@ -1,0 +1,11 @@
+---
+- name: This is name of the play
+  hosts: 127.0.0.1
+ 
+  tasks:
+ 
+  - name: Execute Simple echo Command
+    shell: echo "Hi! Tower is working."
+
+  - name: Execute pwd Command
+    shell: pwd
