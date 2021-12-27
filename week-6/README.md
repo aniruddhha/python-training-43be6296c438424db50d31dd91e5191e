@@ -41,7 +41,7 @@
 - Order will be given to cloud kitchen with some id
 - Need to get details like how many orders are executed by perticular kitchen
 
-### Menu
+### Menu Module
 - Only admin can add, update, delete menu
 
 
