@@ -1,0 +1,10 @@
+---
+- name: Playbook for maintaining git repositories
+  hosts: 127.0.0.1
+
+  tasks:
+
+  - name: Clone Git Repo
+    git: 
+      repo: https://github.com/aniruddhha/python-training-ci-cd-demo.git 
+      dest: /home/aniruddha/my-new-rpo
