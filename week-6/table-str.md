@@ -10,7 +10,7 @@ order -->
 order_id(pk),	user_id_mobile(nn), 	kitchen_id(nn),	customer_id(nn),	status(true)
 
 cart -->				
-cart_id(pk), meu_item_id(nn), price(positive), qty(positive),order_id(nn)
+menu_item_id(nn), price(positive), qty(positive),order_id(nn)
 
 menu -->	
 item_id(pk), price(positive)
@@ -31,7 +31,6 @@ promotion_id,	location
 
 - order references user
 - order references customer
-- order references cart
 - order references kitchen
 
 - cart references order
