@@ -1,6 +1,11 @@
 # Food Vendor Basic CRM
 
 ## The week-6 is dedicated for project implementation having features would be as below
+> End Users will be calling the Food Vendor(who is the user of our software)
+> Food Vendor will ask customer id i.e. mobile number and place the order
+> Each new customer will be registered first and then order will be placed
+
+### User Stories as Follows 
 - As an user, I would like to have login/registration screen
 - As an user, I would like to have dashboard
 - As an user, I would like to have customer module
@@ -15,7 +20,7 @@
 - There would be only one admin who activates and deactivates the users
 
 ### Customer Module
-- Customer registration will be done with unique customer id, name, mobile, email, dob, location
+- Customer registration will be done with unique customer id(mobile number), name, email, dob, location
 - Customer details (excluding customer id)  can be updated anytime by any user 
 - Cutomer can not be deleted but can be blocked
 - Order history for perticular customer need to displayed
