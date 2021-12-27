@@ -92,7 +92,6 @@ create table `promotion_age`(
     `st_ag` int(3),
     `ed_ag` int(3),
 )
-
 alter table `promotion_age` add constraint foreign key(`promotion_id`) references `promotion`(`promotion_id`);
 
 -- END OF PROMOTION AGE
@@ -103,7 +102,6 @@ create table `promotion_location`(
     `promotion_id` int(10),
     `location` varchar(10)
 )
-
 alter table `promotion_location` add constraint foreign key(`promotion_id`) references `promotion`(`promotion_id`);
 
 -- END OF PROMOTION LOCATION
