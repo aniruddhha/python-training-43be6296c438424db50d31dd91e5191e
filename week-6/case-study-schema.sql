@@ -51,14 +51,61 @@ alter table `orders` add constraint foreign key(`kitchen_id`) references `kitche
 
 -- END OF ORDERS
 
+-- CREATING MENU TABLE
+create table `menu`(
+    `item_id` int(10),
+    `item_name` varchar(50) not null,
+    `price` int(10)
+);
+alter table `menu` add constraint primary key(`item_id`);
+-- END OF MENU
+
 -- CREATING CART TABLE
 create table `cart` (
     `menu_item_id` int(10),
     `qty` int(5),
     `order_id` int(10)
-)
+);
 alter table `cart` add constraint foreign key(`order_id`) references `orders`(`order_id`);
+alter table `cart` add constraint foreign key(`menu_item_id`) references `menu`(`menu_id`);
 
 -- END OF CART
+
+-- CREATING PROMOTION TABLE
+create table `promotion`(
+    `promotion_id` int(10),
+    `title` varchar(20),
+    `type` varchar(20),
+    `text` varchar(20) not null,
+    `st_dt` date,
+    `end_dt` date,
+    `status` boolean default 0
+);
+
+alter table `promotion` add constraint primary key(`promotion_id`);
+-- END OF PROMOTION
+
+-- CREATING PROMOTION AGE
+
+create table `promotion_age`(
+    `promotion_id` int(10),
+    `st_ag` int(3),
+    `ed_ag` int(3),
+)
+
+alter table `promotion_age` add constraint foreign key(`promotion_id`) references `promotion`(`promotion_id`);
+
+-- END OF PROMOTION AGE
+
+-- CREATING PROMOTION LOCATION
+
+create table `promotion_location`(
+    `promotion_id` int(10),
+    `location` varchar(10)
+)
+
+alter table `promotion_location` add constraint foreign key(`promotion_id`) references `promotion`(`promotion_id`);
+
+-- END OF PROMOTION LOCATION
 
  
