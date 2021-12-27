@@ -21,7 +21,6 @@
 - Order history for perticular customer need to displayed
 - Total money paid by customer need to be displayed
 
-
 ### Promotions Module
 - location wise promotions can be generated,deleted, updated
 - age wise promotions can be generated,deleted, updated
