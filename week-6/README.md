@@ -1,6 +1,6 @@
 # Food Vendor Basic CRM
 
-## The week-6 is dedicated for project implementation as features would be as below
+## The week-6 is dedicated for project implementation having features would be as below
 - As an user, I would like to have login/registration screen
 - As an user, I would like to have dashboard
 - As an user, I would like to have customer module
