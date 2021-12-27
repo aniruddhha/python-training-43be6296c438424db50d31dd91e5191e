@@ -15,8 +15,8 @@
 - As an user, I would like have menu module
 
 ### User Module
-- Use will have (username, password, mobile, role)
-- Login will be done on the basis of username and password
+- User will have (mobile, password, role, doj, status)
+- Login will be done on the basis of mobile and password
 - Only activated user can access dashboard
 - There would be only one admin who activates and deactivates the users
 

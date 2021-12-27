@@ -10,10 +10,10 @@ order -->
 order_id(pk),	user_id_mobile(nn), 	kitchen_id(nn),	customer_id(nn),	status(true)
 
 cart -->				
-menu_item_id(nn), price(positive), qty(positive),order_id(nn)
+menu_item_id(nn), qty(positive), order_id(nn)
 
 menu -->	
-item_id(pk), price(positive)
+item_id(pk), item_name(*), price(positive)
 
 kitchen	-->	
 kitchen_id(pk),	location(*),	name
