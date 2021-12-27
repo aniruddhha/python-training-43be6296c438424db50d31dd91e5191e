@@ -1,6 +1,7 @@
 # Food Vendor Basic CRM
 
 ## The week-6 is dedicated for project implementation having features would be as below
+> We are making CRM for one city having multiple Food Outlets
 > End Users will be calling the Food Vendor(who is the user of our software)
 > Food Vendor will ask customer id i.e. mobile number and place the order
 > Each new customer will be registered first and then order will be placed
