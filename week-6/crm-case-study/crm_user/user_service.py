@@ -14,10 +14,13 @@ class UserService:
         sql = 'select * from crm_user where mobile = %s and password = %s'
         csr.execute(sql, (mobile, password))
         user: dict = csr.fetchone()
-        del user['password']
+
         csr.close()
 
-        if user == None:
+        if(user):
+            del user['password']
+
+        if not user:
             raise UserNotFoundException('You are entering wrong credentials')
         if user.get('status') == 0:
             raise InActiveUserException('Inactive User, Contact Admin')

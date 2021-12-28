@@ -8,7 +8,6 @@ from database.connectivity import Connectivity
 
 connection = Connectivity().db
 
-
 app = Flask(__name__)
 
 api = Api(app)
