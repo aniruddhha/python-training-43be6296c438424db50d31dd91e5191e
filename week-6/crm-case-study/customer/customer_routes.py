@@ -1,4 +1,3 @@
-from crm_admin.crm_admin_resource import CrmAdminResource
 from customer.customer_manipulation_resource import CustomerManipulationResource
 from customer.customer_mobile_availability import CustomerMobileAvailabilityResource
 from customer.customer_fetch_resource import ListCustomerByAgeResource, ListCustomerByLocationResource
@@ -9,11 +8,6 @@ from pymysql.connections import Connection
 def load_customer_routes(api, connection: Connection):
 
     service: CustomerService = CustomerService(connection)
-
-    api.add_resource(
-        CrmAdminResource,
-        '/admin'
-    )
 
     api.add_resource(
         CustomerManipulationResource,
