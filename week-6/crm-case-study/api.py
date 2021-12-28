@@ -6,6 +6,10 @@ from customer.customer_manipulation_resource import CustomerManipulationResource
 from customer.customer_mobile_availability import CustomerMobileAvailabilityResource
 from customer.customer_fetch_resource import ListCustomerByAge, ListCustomerByLocation
 
+from database.connectivity import Connectivity
+
+connection = Connectivity().db
+
 app = Flask(__name__)
 
 api = Api(app)
