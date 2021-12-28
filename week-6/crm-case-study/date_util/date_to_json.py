@@ -2,12 +2,12 @@ import datetime
 import json
 
 
-def date_to_string(dt):
+def date_to_string(dt: datetime.date) -> str:
     if isinstance(dt, (datetime.date, datetime.datetime)):
         return dt.isoformat()
 
 
-def convert_object_to_dict_which_contains_date(raw_obj):
+def convert_object_to_dict_which_contains_date(raw_obj: dict) -> dict:
     json_str = json.dumps(
         raw_obj,
         default=date_to_string
