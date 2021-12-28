@@ -19,9 +19,10 @@ class CustomerService:
                 sql = 'insert into crm_customer values (%(mobile)s, %(name)s, %(email)s, %(dob)s, %(location)s, %(status)s )'
                 csr: Cursor = self.connection.cursor()
                 self.connection.begin()
-                csr.execute(sql, customer)
+                cnt = csr.execute(sql, customer)
                 self.connection.commit()
                 csr.close()
+                return cnt
         except:
             raise
 

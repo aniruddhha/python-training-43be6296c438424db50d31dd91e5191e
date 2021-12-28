@@ -3,6 +3,7 @@
 ### Admin Resource
 - Activate User -> PUT
 - Deactivate User -> PUT
+- login -> POST
 
 ### Customer Resource
 - Create New Customer -> POST 
