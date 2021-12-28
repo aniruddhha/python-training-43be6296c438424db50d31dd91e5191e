@@ -24,4 +24,5 @@ class UserManipulationResource(Resource):
             return {
                 'sts': 'fail',
                 'msg': ex.msg,
-            }
+                'res': 'user not found'
+            }, 404
