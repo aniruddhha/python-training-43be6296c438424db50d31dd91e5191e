@@ -5,7 +5,7 @@ from flask_restful import Resource
 from flask import request
 
 from crm_user.user_service import UserService
-from crm_user.user_exceptions import UserNotFoundException
+from crm_user.user_exceptions import InActiveUserException, UserNotFoundException
 
 
 class UserManipulationResource(Resource):
@@ -34,3 +34,9 @@ class UserManipulationResource(Resource):
                 'msg': ex.msg,
                 'res': 'user not found'
             }, 404
+        except InActiveUserException as ex:
+            return {
+                'sts': 'fail',
+                'msg': ex.msg,
+                'res': 'inactive user'
+            }, 403
