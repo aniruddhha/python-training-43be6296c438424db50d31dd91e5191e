@@ -1,8 +1,8 @@
 from flask_restful import Resource
-from customer_service import CustomerService
+from customer.customer_service import CustomerService
 
 
-class ListCustomerByAge(Resource):
+class ListCustomerByAgeResource(Resource):
 
     def __init__(self, service: CustomerService) -> None:
         super().__init__()
@@ -15,7 +15,7 @@ class ListCustomerByAge(Resource):
         }
 
 
-class ListCustomerByLocation(Resource):
+class ListCustomerByLocationResource(Resource):
     def __init__(self, service: CustomerService) -> None:
         super().__init__()
         self.service = service
