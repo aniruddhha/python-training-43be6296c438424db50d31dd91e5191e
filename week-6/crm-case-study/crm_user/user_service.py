@@ -10,10 +10,11 @@ class UserService:
 
     def perform_login(self, mobile: str, password: str) -> dict:
 
-        csr: Cursor = self.db.cursor()
+        csr: Cursor = self.connection.cursor()
         sql = 'select * from crm_user where mobile = %s and password = %s'
         csr.execute(sql, (mobile, password))
         user = csr.fetchone()
+
         csr.close()
 
         if user != None:
