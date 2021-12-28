@@ -1,6 +1,7 @@
 import pymysql
 
 
+
 class Connectivity:
     def __init__(self):
         self.db = None
