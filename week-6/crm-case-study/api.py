@@ -6,9 +6,12 @@ from crm_user.user_routes import load_user_routes
 
 from database.connectivity import Connectivity
 
+from flask_cors import CORS
+
 connection = Connectivity().db
 
 app = Flask(__name__)
+CORS(app)
 
 api = Api(app)
 
