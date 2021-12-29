@@ -1,5 +1,3 @@
-import json
-
 from date_util.date_to_json import convert_object_to_dict_which_contains_date, date_to_string
 from flask_restful import Resource
 from flask import request
