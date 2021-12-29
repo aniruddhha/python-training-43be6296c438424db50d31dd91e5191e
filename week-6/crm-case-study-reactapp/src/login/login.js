@@ -2,22 +2,39 @@
 import React from 'react';
 import bg from '../images/bg-login.jpg'
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { apiCrmLogin } from './login-rest-api';
+import { useNavigate } from 'react-router';
 
 export function LoginPage() {
 
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({ user_name: '', password: '' })
 
     const onChangeMobile = (e) => setFormData({ ...formData, user_name: e.target.value })
     const onChangePassword = (e) => setFormData({ ...formData, password: e.target.value })
 
+    const makeLoginRequest = useCallback(() => {
+        apiCrmLogin(formData).then(resJson => {
+            console.log(resJson)
+            if (resJson['sts'] == 'success') {
+                // localStorage is html5 feature
+                const result = resJson['res']
+                localStorage.setItem('status', result['status'])
+                localStorage.setItem('mobile', result['mobile'])
+                localStorage.setItem('doj', result['doj'])
+                localStorage.setItem('role', result['role'])
+
+                navigate('')
+            }
+        }).catch(err => console.log(err))
+    }, [formData])
+
     const onLoginSubmit = (e) => {
         e.preventDefault() // stop refreshing bevaiour
         console.log(formData)
-        apiCrmLogin(formData).then(resJson => {
-            console.log(resJson)
-        }).catch(err => console.log(err))
+
+        makeLoginRequest()
     }
 
     return (
