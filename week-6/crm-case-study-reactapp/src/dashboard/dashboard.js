@@ -1,13 +1,12 @@
-import { apiListCrmUsers } from './crm-user-list-rest-api'
-import { useCallback } from 'react'
+
 import { Outlet } from 'react-router-dom'
 import './dashboard.css'
 
+import { useNavigate } from 'react-router'
+
 export function DashboardPage() {
 
-    const makeGetListUsersRequest = useCallback(() => {
-        apiListCrmUsers().then(json => console.log(json))
-    }, [])
+    const navigate = useNavigate()
 
     return (
         <main >
@@ -18,12 +17,12 @@ export function DashboardPage() {
                 <hr />
                 <ul className="nav nav-pills flex-column mb-auto">
                     <li className="nav-item">
-                        <a href="#" className="nav-link active" aria-current="page">
+                        <a href="#" className="nav-link text-white" aria-current="page">
                             Customers
                         </a>
                     </li>
                     <li>
-                        <a onClick={() => makeGetListUsersRequest()} className="nav-link text-white">
+                        <a onClick={() => navigate('users')} className="nav-link text-white">
                             Users
                         </a>
                     </li>
