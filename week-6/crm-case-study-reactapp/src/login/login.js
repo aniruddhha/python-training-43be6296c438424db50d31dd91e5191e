@@ -25,7 +25,7 @@ export function LoginPage() {
                 localStorage.setItem('doj', result['doj'])
                 localStorage.setItem('role', result['role'])
 
-                navigate('')
+                navigate('/dash')
             }
         }).catch(err => console.log(err))
     }, [formData])
