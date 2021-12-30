@@ -12,6 +12,7 @@ class UserListService:
     def list_all_users(self) -> tuple:
         csr: Cursor = self.connection.cursor()
 
+        self.connection.begin()
         sql: str = 'select mobile, doj, role, status from crm_user'
         csr.execute(sql)
         users: tuple = csr.fetchall()  # tuple of users dictionary which contains date object
@@ -19,7 +20,7 @@ class UserListService:
             convert_object_to_dict_which_contains_date,
             users
         )  # we converted above tuple to tuple of dictionaries with date as a string and not date object
-
+        self.connection.commit()
         csr.close()
 
         return list(users_converted)
