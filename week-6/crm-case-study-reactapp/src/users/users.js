@@ -1,5 +1,5 @@
-import { apiListCrmUsers } from './crm-user-list-rest-api'
-import { useEffect, useState } from 'react'
+import { apiListCrmUsers, apiActivateDeactivateUser } from './crm-user-list-rest-api'
+import { useEffect, useState, useCallback } from 'react'
 import './users.css'
 import { Modal } from 'react-bootstrap'
 
@@ -9,24 +9,39 @@ export function CrmUser() {
     const [modalShow, setModalShow] = useState(false)
     const [modalTitle, setModalTitle] = useState()
     const [modalBody, setModalBody] = useState()
+    const [clickedUser, setClickedUser] = useState({})
 
     useEffect(() => { // used for calling rest api at the time of initial render
         apiListCrmUsers().then(json => {
             const urs = json['res']
-
             setUsers(urs)
         })
     }, [])
 
-    const onOperationClicked = op => {
+    const onOperationClicked = usr => {
         setModalShow(true)
-        setModalTitle(op['status'] ? 'Deactivating User' : 'Activating User')
-        setModalBody(`${op['mobile']}`)
+        setModalTitle(usr['status'] ? 'Deactivating User' : 'Activating User')
+        setModalBody(`${usr['mobile']}`)
+        setClickedUser(usr)
+        console.log(usr)
     }
 
-    const onModalHide = () => {
-        setModalShow(false)
-    }
+    const onModalHide = () => setModalShow(false)
+
+    const onOkayClicked = () => makePutActivateDeactivateRequest()
+
+    const makePutActivateDeactivateRequest = useCallback(() => {
+        console.log(clickedUser)
+        const admin_id = localStorage.getItem('mobile')
+        const user_id = clickedUser['mobile']
+        const sts = clickedUser['status'] == 0 ? 1 : 0
+
+        apiActivateDeactivateUser(admin_id, user_id, sts).then(res => {
+            if (res['sts'] == 'success') {
+                setModalShow(false)
+            }
+        })
+    }, [clickedUser, modalShow])
 
     const trUsers = users.map((usr, inx) => {
         return (
@@ -45,7 +60,6 @@ export function CrmUser() {
 
     return (
         <>
-
             <div className='container border border-primary'>
                 <div className='row'>
                     <div className='column'>
@@ -90,6 +104,7 @@ export function CrmUser() {
                         type='button'
                         className='btn btn-primary'
                         value="Okay"
+                        onClick={onOkayClicked}
                     />
                 </Modal.Footer>
             </Modal>
