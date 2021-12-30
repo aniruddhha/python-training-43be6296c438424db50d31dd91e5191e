@@ -15,7 +15,6 @@ class UserListService:
         sql: str = 'select mobile, doj, role, status from crm_user'
         csr.execute(sql)
         users: tuple = csr.fetchall()  # tuple of users dictionary which contains date object
-
         users_converted = map(
             convert_object_to_dict_which_contains_date,
             users

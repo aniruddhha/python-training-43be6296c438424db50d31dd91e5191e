@@ -10,7 +10,7 @@ export function DashboardPage() {
 
     return (
         <main >
-            <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{ width: '280px', height: '100vh' }}>
+            <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{ width: '15%', height: '100vh' }}>
                 <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span className="fs-4">Sidebar</span>
                 </a>
@@ -57,7 +57,7 @@ export function DashboardPage() {
                     </ul>
                 </div>
             </div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column" style={{ width: '85%', height: '100vh' }}>
                 <Outlet />
             </div>
         </main>
