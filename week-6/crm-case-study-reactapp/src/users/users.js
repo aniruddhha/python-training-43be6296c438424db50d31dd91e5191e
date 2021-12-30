@@ -23,7 +23,6 @@ export function CrmUser() {
         setModalTitle(usr['status'] ? 'Deactivating User' : 'Activating User')
         setModalBody(`${usr['mobile']}`)
         setClickedUser(usr)
-        console.log(usr)
     }
 
     const onModalHide = () => setModalShow(false)
@@ -31,7 +30,7 @@ export function CrmUser() {
     const onOkayClicked = () => makePutActivateDeactivateRequest()
 
     const makePutActivateDeactivateRequest = useCallback(() => {
-        console.log(clickedUser)
+        // non react world, 
         const admin_id = localStorage.getItem('mobile')
         const user_id = clickedUser['mobile']
         const sts = clickedUser['status'] == 0 ? 1 : 0
@@ -39,9 +38,14 @@ export function CrmUser() {
         apiActivateDeactivateUser(admin_id, user_id, sts).then(res => {
             if (res['sts'] == 'success') {
                 setModalShow(false)
+
+                apiListCrmUsers().then(json => {
+                    const urs = json['res']
+                    setUsers(urs)
+                })
             }
         })
-    }, [clickedUser, modalShow])
+    }, [clickedUser, modalShow]) // if you want to react worlds data
 
     const trUsers = users.map((usr, inx) => {
         return (
