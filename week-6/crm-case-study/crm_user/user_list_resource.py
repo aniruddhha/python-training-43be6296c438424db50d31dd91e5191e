@@ -1,7 +1,8 @@
 from flask_restful import Resource
 from flask import request
 
-from user_list_service import UserListService
+from crm_user.user_list_service import UserListService
+
 
 
 class UserListResource(Resource):
@@ -10,6 +11,7 @@ class UserListResource(Resource):
         self.service = service
 
     def get(self):
+
         return {
             'sts': 'success',
             'msg': 'all users in db',
